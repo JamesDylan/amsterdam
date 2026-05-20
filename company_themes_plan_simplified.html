@@ -1,0 +1,1657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Company Management · Q3 2026 Plan · B4B (Simplified)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&family=DM+Mono:wght@400;500&family=Fraunces:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #F7F5F2;
+    --bg-soft: #EFEDE8;
+    --sidebar-bg: #1A1625;
+    --card: #FFFFFF;
+    --text: #111118;
+    --muted: #5C5869;
+    --faint: #8E8A98;
+    --border: rgba(17,17,24,0.1);
+    --border-soft: rgba(17,17,24,0.06);
+
+    /* Grow themes */
+    --c1: #0EA898; --c1-bg: #EFFCFA; --c1-text: #0A7A6E; --c1-soft: rgba(14,168,152,0.08);
+    --c2: #6D28D9; --c2-bg: #F4F1FF; --c2-text: #4C1D95; --c2-soft: rgba(109,40,217,0.08);
+    /* Mature themes */
+    --c3: #DB2777; --c3-bg: #FDF2F8; --c3-text: #9D174D; --c3-soft: rgba(219,39,119,0.08);
+    --c4: #D97706; --c4-bg: #FFFBEB; --c4-text: #92400E; --c4-soft: rgba(217,119,6,0.08);
+
+    /* TA accent (independent of theme colors) */
+    --ta: #1A1625; --ta-bg: rgba(26,22,37,0.07);
+
+    --font-head: 'Outfit', sans-serif;
+    --font-display: 'Fraunces', serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text);
+    display: flex;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+  }
+
+  /* ============ SIDEBAR ============ */
+  .sidebar {
+    width: 232px;
+    background: var(--sidebar-bg);
+    position: fixed;
+    top: 0; left: 0;
+    height: 100vh;
+    padding: 2rem 1.25rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    overflow-y: auto;
+  }
+  .sidebar-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.18em;
+    color: rgba(255,255,255,0.38);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .sidebar-brand {
+    font-family: var(--font-head);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.95);
+    line-height: 1.3;
+    margin-bottom: 0.35rem;
+  }
+  .sidebar-quarter {
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    color: rgba(255,255,255,0.32);
+    letter-spacing: 0.08em;
+    margin-bottom: 2rem;
+  }
+  .nav-section { margin-bottom: 1.25rem; }
+  .nav-label {
+    font-family: var(--font-mono);
+    font-size: 0.52rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.28);
+    margin-bottom: 0.6rem;
+    padding-left: 0.6rem;
+  }
+  .sidebar nav { display: flex; flex-direction: column; gap: 0.1rem; }
+  .nav-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.55rem;
+    padding: 0.45rem 0.6rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+  .nav-item:hover { background: rgba(255,255,255,0.06); }
+  .nav-item.active { background: rgba(255,255,255,0.09); }
+  .nav-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 0.32rem;
+    background: rgba(255,255,255,0.32);
+  }
+  .nav-dot.d1 { background: var(--c1); }
+  .nav-dot.d2 { background: var(--c2); }
+  .nav-dot.d3 { background: var(--c3); }
+  .nav-dot.d4 { background: var(--c4); }
+  .nav-text {
+    font-family: var(--font-body);
+    font-size: 0.74rem;
+    color: rgba(255,255,255,0.62);
+    line-height: 1.35;
+  }
+  .nav-item:hover .nav-text { color: rgba(255,255,255,0.92); }
+  .sidebar-footer {
+    margin-top: auto;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    font-family: var(--font-mono);
+    font-size: 0.52rem;
+    color: rgba(255,255,255,0.28);
+    letter-spacing: 0.05em;
+    line-height: 1.7;
+  }
+
+  /* ============ MAIN ============ */
+  main {
+    margin-left: 232px;
+    padding: 3rem 3.5rem 6rem;
+    max-width: 1080px;
+    width: 100%;
+  }
+  section { margin-bottom: 4.5rem; }
+  section:last-child { margin-bottom: 0; }
+
+  /* ============ HERO ============ */
+  .hero {
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 3rem;
+  }
+  .hero-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.85rem;
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 1.04;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 1.25rem;
+    max-width: 18ch;
+  }
+  .hero h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--muted);
+  }
+  .hero-meta {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.05em;
+    color: var(--faint);
+  }
+  .hero-meta span { display: flex; align-items: center; gap: 0.4rem; }
+  .hero-meta span::before {
+    content: "";
+    width: 4px; height: 4px;
+    background: var(--faint);
+    border-radius: 50%;
+  }
+
+  /* ============ SECTION HEADER ============ */
+  .sec-head {
+    margin-bottom: 1.75rem;
+  }
+  .sec-num {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    color: var(--faint);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .sec-title {
+    font-family: var(--font-head);
+    font-size: 1.65rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    color: var(--text);
+    margin-bottom: 0.55rem;
+    max-width: 32ch;
+  }
+  .sec-subtitle {
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.55;
+    max-width: 62ch;
+  }
+
+  /* ============ THESIS BLOCK ============ */
+  .thesis {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 2.5rem 2.5rem 2.25rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .thesis::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 4px;
+    background: linear-gradient(90deg, var(--c1) 0%, var(--c1) 25%, var(--c2) 25%, var(--c2) 50%, var(--c3) 50%, var(--c3) 75%, var(--c4) 75%);
+  }
+  .thesis-quote {
+    font-family: var(--font-display);
+    font-size: 1.55rem;
+    font-weight: 400;
+    line-height: 1.35;
+    letter-spacing: -0.005em;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+  }
+  .thesis-quote em {
+    font-style: italic;
+    color: var(--c2-text);
+  }
+  .thesis-quote strong {
+    font-weight: 600;
+    background: linear-gradient(transparent 70%, rgba(217,119,6,0.25) 70%);
+    padding: 0 2px;
+  }
+  .thesis-source {
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    color: var(--faint);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* ============ STRUCTURE ============ */
+  .structure {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .struct-row-label {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.5rem 0 0.25rem;
+  }
+  .struct-row-label .row-tag {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: var(--bg-soft);
+    padding: 0.35rem 0.7rem;
+    border-radius: 4px;
+  }
+  .struct-row-label .row-desc {
+    font-size: 0.78rem;
+    color: var(--faint);
+    font-style: italic;
+  }
+  .struct-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.5rem 1.5rem 1.4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .struct-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+  }
+  .struct-card.t1::before { background: var(--c1); }
+  .struct-card.t2::before { background: var(--c2); }
+  .struct-card.t3::before { background: var(--c3); }
+  .struct-card.t4::before { background: var(--c4); }
+  .struct-num {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    color: var(--faint);
+    margin-bottom: 0.6rem;
+  }
+  .struct-card.t1 .struct-num { color: var(--c1); }
+  .struct-card.t2 .struct-num { color: var(--c2); }
+  .struct-card.t3 .struct-num { color: var(--c3); }
+  .struct-card.t4 .struct-num { color: var(--c4); }
+  .struct-title {
+    font-family: var(--font-head);
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 0.45rem;
+    letter-spacing: -0.01em;
+  }
+  .struct-desc {
+    font-size: 0.83rem;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  /* ============ FLOW ARROW ============ */
+  .flow-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.25rem 0;
+    gap: 0.85rem;
+  }
+  .flow-divider::before,
+  .flow-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  .flow-divider-text {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    color: var(--faint);
+    text-transform: uppercase;
+  }
+
+  /* ============ THEME CARDS ============ */
+  .theme-deep {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 1.25rem;
+  }
+  .theme-deep-head {
+    padding: 2rem 2rem 1.5rem;
+    border-bottom: 1px solid var(--border-soft);
+    position: relative;
+  }
+  .theme-deep.t1 .theme-deep-head { background: linear-gradient(180deg, var(--c1-soft) 0%, transparent 100%); }
+  .theme-deep.t2 .theme-deep-head { background: linear-gradient(180deg, var(--c2-soft) 0%, transparent 100%); }
+  .theme-deep.t3 .theme-deep-head { background: linear-gradient(180deg, var(--c3-soft) 0%, transparent 100%); }
+  .theme-deep.t4 .theme-deep-head { background: linear-gradient(180deg, var(--c4-soft) 0%, transparent 100%); }
+
+  .theme-top-line {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.1rem;
+    flex-wrap: wrap;
+  }
+  .theme-big-num {
+    font-family: var(--font-mono);
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+  .theme-deep.t1 .theme-big-num { color: var(--c1); }
+  .theme-deep.t2 .theme-big-num { color: var(--c2); }
+  .theme-deep.t3 .theme-big-num { color: var(--c3); }
+  .theme-deep.t4 .theme-big-num { color: var(--c4); }
+  .theme-layer-tag {
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.65rem;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+  .theme-layer-tag.grow {
+    background: rgba(17,17,24,0.06);
+    color: var(--muted);
+  }
+  .theme-layer-tag.mature {
+    background: rgba(17,17,24,0.85);
+    color: white;
+  }
+  .theme-ta-indicator {
+    font-family: var(--font-mono);
+    font-size: 0.55rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.65rem 0.3rem 0.4rem;
+    border-radius: 4px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--ta-bg);
+    color: var(--ta);
+    border: 1px solid rgba(26,22,37,0.12);
+  }
+  .theme-ta-indicator::before {
+    content: "TA";
+    background: var(--ta);
+    color: white;
+    padding: 0.12rem 0.35rem;
+    border-radius: 2px;
+    font-size: 0.52rem;
+    letter-spacing: 0.06em;
+  }
+  .theme-ta-indicator.strong { background: rgba(26,22,37,0.95); color: white; border-color: transparent; }
+  .theme-ta-indicator.strong::before { background: white; color: var(--ta); }
+  .theme-ta-indicator.partial { opacity: 0.85; }
+  .theme-ta-indicator.limited { opacity: 0.55; }
+
+  .theme-deep-title {
+    font-family: var(--font-head);
+    font-size: 1.55rem;
+    font-weight: 700;
+    line-height: 1.18;
+    letter-spacing: -0.015em;
+    margin-bottom: 0.75rem;
+    max-width: 22ch;
+  }
+  .theme-bet {
+    font-family: var(--font-display);
+    font-size: 1.08rem;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.45;
+    color: var(--muted);
+    max-width: 52ch;
+  }
+  .theme-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 1.4rem;
+  }
+  .stat-pill {
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    padding: 0.32rem 0.7rem;
+    border-radius: 4px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-weight: 500;
+  }
+  .theme-deep.t1 .stat-pill { background: var(--c1-bg); color: var(--c1-text); border-color: transparent; }
+  .theme-deep.t2 .stat-pill { background: var(--c2-bg); color: var(--c2-text); border-color: transparent; }
+  .theme-deep.t3 .stat-pill { background: var(--c3-bg); color: var(--c3-text); border-color: transparent; }
+  .theme-deep.t4 .stat-pill { background: var(--c4-bg); color: var(--c4-text); border-color: transparent; }
+
+  .theme-deep-body {
+    padding: 1.75rem 2rem 2rem;
+  }
+  .theme-body-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .theme-block-label {
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--faint);
+    margin-bottom: 0.7rem;
+  }
+  .theme-why {
+    font-size: 0.92rem;
+    color: var(--text);
+    line-height: 1.6;
+  }
+  .theme-feats { list-style: none; }
+  .theme-feats li {
+    display: flex;
+    align-items: baseline;
+    gap: 0.65rem;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid var(--border-soft);
+    font-size: 0.86rem;
+    color: var(--text);
+    line-height: 1.4;
+  }
+  .theme-feats li:last-child { border-bottom: none; }
+  .feat-ice {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    font-weight: 500;
+    padding: 0.15rem 0.4rem;
+    border-radius: 3px;
+    background: var(--bg-soft);
+    color: var(--muted);
+    flex-shrink: 0;
+    min-width: 38px;
+    text-align: center;
+  }
+  .feat-ice.high { background: rgba(14,168,152,0.18); color: var(--c1-text); }
+  .feat-ice.mid { background: rgba(217,119,6,0.16); color: var(--c4-text); }
+
+  .feat-name { flex: 1; }
+  .ta-tag {
+    font-family: var(--font-mono);
+    font-size: 0.52rem;
+    background: var(--ta);
+    color: white;
+    padding: 0.1rem 0.32rem;
+    border-radius: 2px;
+    letter-spacing: 0.08em;
+    margin-left: 0.4rem;
+    vertical-align: middle;
+    display: inline-block;
+  }
+
+  .theme-meta {
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border-soft);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    font-size: 0.78rem;
+  }
+  .theme-meta-item { display: flex; flex-direction: column; gap: 0.2rem; }
+  .theme-meta-label {
+    font-family: var(--font-mono);
+    font-size: 0.55rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--faint);
+  }
+  .theme-meta-val {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  /* ============ FEATURE MAP ============ */
+  .featmap {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+  .featmap-col {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem 1rem 0.5rem;
+  }
+  .featmap-col-head {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-bottom: 0.6rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .featmap-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+  }
+  .featmap-dot.t1 { background: var(--c1); }
+  .featmap-dot.t2 { background: var(--c2); }
+  .featmap-dot.t3 { background: var(--c3); }
+  .featmap-dot.t4 { background: var(--c4); }
+  .featmap-col-title {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text);
+    font-weight: 500;
+  }
+  .featmap-count {
+    margin-left: auto;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--faint);
+  }
+  .featmap-item {
+    padding: 0.45rem 0;
+    border-bottom: 1px solid var(--border-soft);
+    font-size: 0.74rem;
+    line-height: 1.35;
+    display: flex;
+    gap: 0.4rem;
+    align-items: flex-start;
+  }
+  .featmap-item:last-child { border-bottom: none; }
+  .featmap-item .feat-ice {
+    font-size: 0.56rem;
+    padding: 0.1rem 0.32rem;
+    min-width: 32px;
+    margin-top: 0.05rem;
+  }
+  .featmap-item .feat-name { color: var(--text); flex: 1; }
+  .featmap-item .ta-tag {
+    font-size: 0.48rem;
+    padding: 0.08rem 0.28rem;
+    margin-left: 0.25rem;
+    margin-top: 0.05rem;
+  }
+  .featmap-item.committed {
+    background: linear-gradient(90deg, var(--bg-soft), transparent);
+    margin: 0 -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .commit-flag {
+    font-family: var(--font-mono);
+    font-size: 0.52rem;
+    background: rgba(17,17,24,0.85);
+    color: white;
+    padding: 0.1rem 0.3rem;
+    border-radius: 2px;
+    margin-left: 0.3rem;
+    letter-spacing: 0.05em;
+  }
+
+  /* ============ DIAGNOSIS ============ */
+  .diag {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .diag-row {
+    display: grid;
+    grid-template-columns: 180px 1fr 1fr;
+    gap: 1.5rem;
+    padding: 1.4rem 1.75rem;
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .diag-row:last-child { border-bottom: none; }
+  .diag-row.head {
+    background: var(--bg-soft);
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 0.85rem 1.75rem;
+  }
+  .diag-row.recommended {
+    background: linear-gradient(90deg, rgba(14,168,152,0.06), rgba(109,40,217,0.06), rgba(219,39,119,0.06), rgba(217,119,6,0.06));
+  }
+  .diag-name {
+    font-family: var(--font-head);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .diag-name .badge {
+    display: inline-block;
+    margin-left: 0.4rem;
+    font-family: var(--font-mono);
+    font-size: 0.55rem;
+    background: var(--c1);
+    color: white;
+    padding: 0.12rem 0.4rem;
+    border-radius: 3px;
+    letter-spacing: 0.05em;
+    vertical-align: middle;
+  }
+  .diag-cell {
+    font-size: 0.82rem;
+    line-height: 1.55;
+    color: var(--muted);
+  }
+  .diag-cell.good { color: var(--c1-text); }
+  .diag-cell.bad { color: var(--text); }
+  .diag-cell strong { color: var(--text); font-weight: 600; }
+
+  /* ============ Q&A ============ */
+  .qa-list { display: flex; flex-direction: column; gap: 1rem; }
+  .qa-item {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.35rem 1.5rem;
+  }
+  .qa-q {
+    font-family: var(--font-display);
+    font-size: 1.02rem;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--text);
+    margin-bottom: 0.65rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+  }
+  .qa-q::before {
+    content: "Q";
+    font-family: var(--font-mono);
+    font-style: normal;
+    font-size: 0.7rem;
+    background: var(--text);
+    color: white;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .qa-a {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: var(--muted);
+    padding-left: 1.95rem;
+    border-left: 2px solid var(--border);
+    margin-left: 0.6rem;
+  }
+  .qa-a strong { color: var(--text); }
+
+  /* ============ DECK NARRATIVE ============ */
+  .deck-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+  .deck-slide {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    display: grid;
+    grid-template-columns: 50px 1fr 2fr;
+    gap: 1.25rem;
+    align-items: center;
+  }
+  .deck-num {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--faint);
+    letter-spacing: 0.05em;
+  }
+  .deck-title {
+    font-family: var(--font-head);
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .deck-purpose {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.45;
+  }
+
+  /* ============ MOCKUP ============ */
+  .mockup {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 2rem;
+    margin-top: 1.5rem;
+  }
+  .mockup-label {
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--faint);
+    margin-bottom: 1.25rem;
+  }
+  .mockup-slide {
+    background: var(--bg);
+    border-radius: 8px;
+    padding: 2rem 2.25rem;
+    aspect-ratio: 16 / 9;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border-soft);
+    position: relative;
+    overflow: hidden;
+  }
+  .mockup-slide-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.55rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.8rem;
+  }
+  .mockup-slide-title {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 0.6rem;
+    max-width: 18ch;
+  }
+  .mockup-slide-title em { font-style: italic; color: var(--muted); font-weight: 400; }
+  .mockup-slide-sub {
+    font-size: 0.82rem;
+    color: var(--muted);
+    font-style: italic;
+    margin-bottom: 1.75rem;
+    max-width: 60ch;
+  }
+  .mockup-themes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.6rem;
+    margin-top: auto;
+  }
+  .mockup-theme {
+    padding: 0.7rem 0.8rem;
+    background: white;
+    border-radius: 6px;
+    border-top: 3px solid;
+    position: relative;
+  }
+  .mockup-theme.mt1 { border-color: var(--c1); }
+  .mockup-theme.mt2 { border-color: var(--c2); }
+  .mockup-theme.mt3 { border-color: var(--c3); }
+  .mockup-theme.mt4 { border-color: var(--c4); }
+  .mockup-theme-num {
+    font-family: var(--font-mono);
+    font-size: 0.55rem;
+    color: var(--faint);
+    letter-spacing: 0.12em;
+    margin-bottom: 0.3rem;
+  }
+  .mockup-theme-name {
+    font-family: var(--font-head);
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.25;
+  }
+  .mockup-theme .ta-mini {
+    position: absolute;
+    top: 0.4rem;
+    right: 0.45rem;
+    font-family: var(--font-mono);
+    font-size: 0.4rem;
+    background: var(--ta);
+    color: white;
+    padding: 0.08rem 0.22rem;
+    border-radius: 2px;
+    letter-spacing: 0.05em;
+  }
+  .mockup-theme .ta-mini.partial { opacity: 0.55; }
+
+  /* ============ EXCERPT ============ */
+  .excerpt {
+    background: var(--bg-soft);
+    border-left: 3px solid var(--c2);
+    padding: 1rem 1.25rem;
+    margin: 1rem 0;
+    border-radius: 0 6px 6px 0;
+  }
+  .excerpt-src {
+    font-family: var(--font-mono);
+    font-size: 0.56rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+  .excerpt-text {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--text);
+  }
+
+  /* ============ UTILS ============ */
+  .legend {
+    display: flex;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    flex-wrap: wrap;
+  }
+  .legend-item { display: flex; align-items: center; gap: 0.45rem; }
+  .legend-swatch {
+    width: 14px; height: 8px;
+    border-radius: 2px;
+  }
+
+  /* ============ TA OVERVIEW PANEL ============ */
+  .ta-panel {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.75rem 2rem;
+    margin-top: 1.25rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .ta-panel::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 4px;
+    background: var(--ta);
+  }
+  .ta-panel-head {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .ta-panel-tag {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    background: var(--ta);
+    color: white;
+    padding: 0.25rem 0.55rem;
+    border-radius: 3px;
+  }
+  .ta-panel-title {
+    font-family: var(--font-head);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .ta-panel-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .ta-panel-cell {
+    padding: 0.85rem;
+    background: var(--bg-soft);
+    border-radius: 6px;
+    border-top: 3px solid;
+  }
+  .ta-panel-cell.t1 { border-color: var(--c1); }
+  .ta-panel-cell.t2 { border-color: var(--c2); }
+  .ta-panel-cell.t3 { border-color: var(--c3); }
+  .ta-panel-cell.t4 { border-color: var(--c4); }
+  .ta-panel-cell-num {
+    font-family: var(--font-mono);
+    font-size: 0.55rem;
+    color: var(--faint);
+    letter-spacing: 0.12em;
+    margin-bottom: 0.3rem;
+  }
+  .ta-panel-cell-rel {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text);
+    margin-bottom: 0.45rem;
+  }
+  .ta-panel-cell-rel.strong { color: var(--ta); }
+  .ta-panel-cell-rel.partial { color: var(--muted); }
+  .ta-panel-cell-rel.limited { color: var(--faint); }
+  .ta-panel-cell-desc {
+    font-size: 0.74rem;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+
+  /* Responsive */
+  @media (max-width: 980px) {
+    .sidebar { display: none; }
+    main { margin-left: 0; padding: 2rem 1.5rem 4rem; }
+    .theme-body-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .featmap { grid-template-columns: 1fr 1fr; }
+    .structure { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 2.2rem; }
+    .diag-row { grid-template-columns: 1fr; gap: 0.5rem; padding: 1rem 1.25rem; }
+    .deck-slide { grid-template-columns: 1fr; gap: 0.35rem; }
+    .ta-panel-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ SIDEBAR ============ -->
+<aside class="sidebar">
+  <div class="sidebar-eyebrow">Serko · B4B</div>
+  <div class="sidebar-brand">Strengthening Company Foundations</div>
+  <div class="sidebar-quarter">Q3 2026 · Plan for AMS</div>
+
+  <div class="nav-section">
+    <div class="nav-label">Strategy</div>
+    <nav>
+      <a class="nav-item" href="#thesis"><span class="nav-dot"></span><span class="nav-text">The main message</span></a>
+      <a class="nav-item" href="#structure"><span class="nav-dot"></span><span class="nav-text">The structure</span></a>
+      <a class="nav-item" href="#mockup"><span class="nav-dot"></span><span class="nav-text">Slide mockup</span></a>
+    </nav>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-label">The four themes</div>
+    <nav>
+      <a class="nav-item" href="#t1"><span class="nav-dot d1"></span><span class="nav-text">01 · Frictionless team growth</span></a>
+      <a class="nav-item" href="#t2"><span class="nav-dot d2"></span><span class="nav-text">02 · Unlock latent members</span></a>
+      <a class="nav-item" href="#t3"><span class="nav-dot d3"></span><span class="nav-text">03 · A company set up to succeed</span></a>
+      <a class="nav-item" href="#t4"><span class="nav-dot d4"></span><span class="nav-text">04 · Ready for larger companies</span></a>
+    </nav>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-label">Travel Arrangers</div>
+    <nav>
+      <a class="nav-item" href="#ta-overview"><span class="nav-dot"></span><span class="nav-text">Where TAs are served</span></a>
+    </nav>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-label">Validation</div>
+    <nav>
+      <a class="nav-item" href="#featmap"><span class="nav-dot"></span><span class="nav-text">Feature map</span></a>
+      <a class="nav-item" href="#diagnosis"><span class="nav-dot"></span><span class="nav-text">Why this approach</span></a>
+      <a class="nav-item" href="#pushback"><span class="nav-dot"></span><span class="nav-text">Bcom Q&A prep</span></a>
+      <a class="nav-item" href="#deck"><span class="nav-dot"></span><span class="nav-text">Slide flow</span></a>
+    </nav>
+  </div>
+
+  <div class="sidebar-footer">
+    DRAFT · SIMPLIFIED VERSION<br>James Scholz<br>Jacqui de Bray
+  </div>
+</aside>
+
+<!-- ============ MAIN ============ -->
+<main>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-eyebrow">Company Management · Q3 2026 · Plan for the AMS face-to-face</div>
+    <h1>Bigger companies.<br><em>Better companies.</em></h1>
+    <div class="hero-meta">
+      <span>4 themes</span>
+      <span>~30 features</span>
+      <span>Grow + Mature</span>
+    </div>
+  </header>
+
+  <!-- THESIS -->
+  <section id="thesis">
+    <div class="sec-head">
+      <div class="sec-num">01 · Strategy</div>
+      <h2 class="sec-title">The main message for Bcom</h2>
+      <p class="sec-subtitle">This is the core idea of the deck. Every theme below supports it. Learn this paragraph by heart.</p>
+    </div>
+
+    <div class="thesis">
+      <p class="thesis-quote">
+        Multi-user companies are everything. Going from 1 to 2 users <strong>increases the next-booking likelihood by ~25%</strong> and reduces churn by ~20%. Companies with 100+ users generate <strong>156 bookings/month vs 2.7 for singles</strong>. But 97% of our base has ≤5 users. <em>Our job in Company Management is to make every B4B company bigger</em> (more members) <em>and better</em> (more capable) — so the SMBs we have today book more, and the larger prospects we want tomorrow choose us.
+      </p>
+      <div class="thesis-source">Evidence from Team Management R3–5 + Team Assignment & Role Foundations PRDs</div>
+    </div>
+
+    <div class="excerpt">
+      <div class="excerpt-src">From the AMS deck · Slide 2 (B4B Objectives)</div>
+      <div class="excerpt-text">"Strengthening Company Foundations — Enhance the company layer felt by Travel Arrangers, by admins, and by the teams. Growing not just users — but multi-user companies adopting B4B at scale."</div>
+    </div>
+  </section>
+
+  <!-- STRUCTURE -->
+  <section id="structure">
+    <div class="sec-head">
+      <div class="sec-num">02 · The structure</div>
+      <h2 class="sec-title">Two layers: Grow + Mature</h2>
+      <p class="sec-subtitle">The four themes split cleanly across two questions every B4B company faces. Two themes are about getting bigger — more members per company. Two themes are about getting more capable — better setup, structure, and enterprise readiness. Showing this structure on the slide answers the "why these four?" question before anyone asks it.</p>
+    </div>
+
+    <div class="structure">
+      <div class="struct-row-label">
+        <span class="row-tag">Grow</span>
+        <span class="row-desc">More members per company. The single biggest driver of bookings and retention.</span>
+      </div>
+      <div class="struct-card t1">
+        <div class="struct-num">01</div>
+        <div class="struct-title">Frictionless team growth</div>
+        <div class="struct-desc">Make adding members the easiest thing an admin can do. Modernise the invite flow, capture name at invite, let Arrangers invite, share via Slack/Teams.</div>
+      </div>
+      <div class="struct-card t2">
+        <div class="struct-num">02</div>
+        <div class="struct-title">Unlock latent members</div>
+        <div class="struct-desc">A huge pool of people already have a relationship with B4B but sit outside the team — guests at checkout, mismatched users, single-user accounts. Convert them.</div>
+      </div>
+
+      <div class="flow-divider">
+        <span class="flow-divider-text">→ once a company grows, mature how it works →</span>
+      </div>
+
+      <div class="struct-row-label">
+        <span class="row-tag">Mature</span>
+        <span class="row-desc">More capable per company. The features that let B4B serve SMBs better today and qualify for larger prospects tomorrow.</span>
+      </div>
+      <div class="struct-card t3">
+        <div class="struct-num">03</div>
+        <div class="struct-title">A company set up to succeed</div>
+        <div class="struct-desc">Replace today's disconnected settings pages with a guided setup, real team and role structure, and a Manage Team experience that connects management to bookings.</div>
+      </div>
+      <div class="struct-card t4">
+        <div class="struct-num">04</div>
+        <div class="struct-title">Ready for larger companies</div>
+        <div class="struct-desc">Prospects with 50+ travellers tell us hierarchy, SSO, legal entities and bulk onboarding are barriers to joining B4B. We need to qualify for them.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE MOCKUP -->
+  <section id="mockup">
+    <div class="sec-head">
+      <div class="sec-num">03 · How it looks as a slide</div>
+      <h2 class="sec-title">The one-slide version</h2>
+      <p class="sec-subtitle">A simple example of how this could work as a single overview slide. It would fit between slide 10 (section opener) and slide 11 of the AMS deck. Small "TA" markers show themes that directly serve Travel Arrangers.</p>
+    </div>
+
+    <div class="mockup">
+      <div class="mockup-label">SLIDE MOCKUP · "Company Management Q3 Investment Themes"</div>
+      <div class="mockup-slide">
+        <div class="mockup-slide-eyebrow">Investment Themes · Company Management · Q3 2026</div>
+        <div class="mockup-slide-title">Bigger companies. <em>Better companies.</em></div>
+        <div class="mockup-slide-sub">Two layers of investment: grow team size where the booking lift comes from, then mature company capability so SMBs stick and large prospects qualify.</div>
+        <div class="mockup-themes">
+          <div class="mockup-theme mt1">
+            <div class="mockup-theme-num">01 · GROW</div>
+            <div class="mockup-theme-name">Frictionless team growth</div>
+            <div class="ta-mini partial">TA</div>
+          </div>
+          <div class="mockup-theme mt2">
+            <div class="mockup-theme-num">02 · GROW</div>
+            <div class="mockup-theme-name">Unlock latent members</div>
+            <div class="ta-mini">TA</div>
+          </div>
+          <div class="mockup-theme mt3">
+            <div class="mockup-theme-num">03 · MATURE</div>
+            <div class="mockup-theme-name">A company set up to succeed</div>
+            <div class="ta-mini">TA</div>
+          </div>
+          <div class="mockup-theme mt4">
+            <div class="mockup-theme-num">04 · MATURE</div>
+            <div class="mockup-theme-name">Ready for larger companies</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THEME DEEP DIVES ============ -->
+
+  <!-- T1 -->
+  <section id="t1">
+    <article class="theme-deep t1">
+      <div class="theme-deep-head">
+        <div class="theme-top-line">
+          <span class="theme-big-num">01</span>
+          <span class="theme-layer-tag grow">Grow · More members</span>
+          <span class="theme-ta-indicator partial">Travel Arrangers: Partial</span>
+        </div>
+        <h3 class="theme-deep-title">Frictionless team growth</h3>
+        <p class="theme-bet">Every barrier between an admin's intent to invite and a colleague joining should disappear. Today the invite flow is fragmented, has friction, and does not capture the information needed to start booking immediately.</p>
+        <div class="theme-stats">
+          <span class="stat-pill">+25% next-booking likelihood (1→2 users)</span>
+          <span class="stat-pill">Each profile = ~4–8 bookings</span>
+          <span class="stat-pill">Release 3 estimate: +25 bookings/day</span>
+        </div>
+      </div>
+      <div class="theme-deep-body">
+        <div class="theme-body-grid">
+          <div>
+            <div class="theme-block-label">Why this matters</div>
+            <p class="theme-why">The invite flow is the highest-frequency admin task in B4B and the single biggest lever for company growth. The Team Management R3–5 PRD modernises the invite UX (R3), adds name capture so invitees can be booked for immediately (R4), and lets Travel Arrangers invite with admin approval — expanding who can grow the team beyond just admins.</p>
+            <p class="theme-why" style="margin-top: 0.75rem;">A 10% increase in invites sent is estimated at +25 bookings/day for B4B. Small wins compound here.</p>
+          </div>
+          <div>
+            <div class="theme-block-label">Top features by ICE</div>
+            <ul class="theme-feats">
+              <li><span class="feat-ice high">80</span><span class="feat-name">Assign role when inviting colleague</span></li>
+              <li><span class="feat-ice">36</span><span class="feat-name">Add first and last name to invite (R4)</span><span class="ta-tag">TA</span></li>
+              <li><span class="feat-ice">30</span><span class="feat-name">Let Arrangers invite, with admin approval</span><span class="ta-tag">TA</span></li>
+              <li><span class="feat-ice">30</span><span class="feat-name">Experiments to nudge solo accounts to invite</span></li>
+              <li><span class="feat-ice">24</span><span class="feat-name">New invite flow — Manage Invitations (R3)</span></li>
+              <li><span class="feat-ice">15</span><span class="feat-name">Slack/Teams shareable invite links</span></li>
+              <li><span class="feat-ice">13</span><span class="feat-name">Show invite link on dashboard</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="theme-meta">
+          <div class="theme-meta-item">
+            <span class="theme-meta-label">Main metric</span>
+            <span class="theme-meta-val">Team members added per company per month</span>
+          </div>
+          <div class="theme-meta-item">
+            <span class="theme-meta-label">Primary persona</span>
+            <span class="theme-meta-val">Company Administrator · Travel Arranger (secondary)</span>
+          </div>
+          <div class="theme-meta-item">
+            <span class="theme-meta-label">Anchor PRD</span>
+            <span class="theme-meta-val">Team Management Releases 3 & 4</span>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- T2 -->
+  <section id="t2">
+    <article class="theme-deep t2">
+      <div class="theme-deep-head">
+        <div class="theme-top-line">
+          <span class="theme-big-num">02</span>
+          <span class="theme-layer-tag grow">Grow · More members</span>
+          <span class="theme-ta-indicator strong">Travel Arrangers: Strong</span>
+        </div>
+        <h3 class="theme-deep-title">Unlock latent members</h3>
+        <p class="theme-bet">There is a hidden pool of people who already have a relationship with B4B but are not on a team — guests at checkout, users sitting in the wrong company, single-user accounts. Convert them.</p>
+        <div class="theme-stats">
+          <span class="stat-pill">83% of companies have guest travellers</span>
+          <span class="stat-pill">86% of profiles in 2+ user companies are guests</span>
+          <span class="stat-pill">72% of users have never had a booking made for them</span>
+          <span class="stat-pill">73%+ user interest in in-flow team expansion</span>
+        </div>
+      </div>
+      <div class="theme-deep-body">
+        <div class="theme-body-grid">
+          <div>
+            <div class="theme-block-label">Why this matters</div>
+            <p class="theme-why">The biggest hidden pool is guest travellers — colleagues added to a booking at checkout but never invited to the team. Release 5 of Team Management makes this a one-step flow: add a guest at checkout, offer to invite them to the team in the same moment. 73%+ of users said they want this.</p>
+            <p class="theme-why" style="margin-top: 0.75rem;">The other latent pool is users who sit in the wrong company — solo accounts at the same email domain as an existing B4B company, or users moving between employers. Today the JEC mechanic catches some of this for new sign-ups, but not for adds initiated by admins. Closing that gap converts more existing traffic into team members.</p>
+          </div>
+          <div>
+            <div class="theme-block-label">Top features by ICE</div>
+            <ul class="theme-feats">
+              <li><span class="feat-ice mid">40</span><span class="feat-name">Inform when users sit in another company (when admin tries to add)</span></li>
+              <li><span class="feat-ice">30</span><span class="feat-name">Add guests to team at checkout (R5)</span><span class="ta-tag">TA</span></li>
+              <li><span class="feat-ice">30</span><span class="feat-name">Convert guests to travel profiles (R5)</span><span class="ta-tag">TA</span></li>
+              <li><span class="feat-ice">0</span><span class="feat-name">Rename the "guest" term within B4B</span></li>
+              <li><span class="feat-ice">0</span><span class="feat-name">Create profile without inviting (TA-driven)</span><span class="ta-tag">TA</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="theme-meta">
+          <div class="theme-meta-item">
+            <span class="theme-meta-label">Main metric</span>
+            <span class="theme-meta-val">Guests converted to team members · Solo → multi-user transitions</span>
+          </div>
+          <div class="theme-meta-item">
+            <span class="theme-meta-label">Primary persona</span>
+            <span class="theme-meta-val">Travel Arranger (primary) · Company Administrator</span>
+          </div>
+          <div class="theme-meta-item">
+            <span class="theme-meta-label">Anchor PRD</span>
+            <span class="theme-meta-val">Team Management Release 5</span>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- T3 -->
+  <section id="t3">
+    <article class="theme-deep t3">
+      <div class="theme-deep-head">
+        <div class="theme-top-line">
+          <span class="theme-big-num">03</span>
+          <span class="theme-layer-tag mature">Mature · More capable</span>
+          <span class="theme-ta-indicator strong">Travel Arrangers: Strong</span>
+        </div>
+        <h3 class="theme-deep-title">A company set up to succeed</h3>
+        <p class="theme-bet">Today's company setup is a collection of disconnected settings pages. Admins find each one independently with no guidance, no progress, and no sense of what a fully configured account looks like. We redesign around the outcomes admins and TAs actually care about.</p>
+        <div class="theme-stats">
+          <span class="stat-pill">Slide 13 sits here</span>
+          <span class="stat-pill">Manage Team = the TA's home screen</span>
+          <span class="stat-pill">Eos migration unlocks it</span>
+        </div>
+      </div>
+      <div class="theme-deep-body">
+        <div class="theme-body-grid">
+          <div>
+            <div class="theme-block-label">Why this matters</div>
+            <p class="theme-why">This is where the everyday admin and Travel Arranger experience lives. Three pieces of work converge here: <strong>Guided Setup</strong> (slide 13) replaces the fragmented settings pages with a step-by-step flow. <strong>Team and Role Foundations</strong> gives admins the ability to create teams, assign members, and limit Arranger visibility to their own team — the first time B4B will support a real org structure.</p>
+              <p class="theme-why" style="margin-top: 0.75rem;"><strong>Manage Team UX experiments</strong> (the Admin Re-design PCB) test linking Manage Team with bookings — upcoming bookings per team member, link to make a booking, eventually a fully task-oriented redesign. Small experiments now, foundation for a larger admin UX redesign later.</p>
+              <p class="theme-why" style="margin-top: 0.75rem;">All three depend on the Eos migration — referenced in the Tech Modernisation section (slides 20–22), but worth flagging here.</p>
+          </div>
+          <div>
+            <div class="theme-block-label">Top features by ICE</div>
+            <ul class="theme-feats">
+              <li><span class="feat-ice mid">45</span><span class="feat-name">Enable team creation and assignment</span><span class="ta-tag">TA</span></li>
+              <li><span class="feat-ice">24</span><span class="feat-name">Modern Company Management front end (Eos)</span></li>
+              <li><span class="feat-ice">16</span><span class="feat-name">Profile language/currency override</span></li>
+              <li><span class="feat-ice">13</span><span class="feat-name">Show Manage Team on dashboard</span><span class="ta-tag">TA</span></li>
+              <li><span class="feat-ice">13</span><span class="feat-name">Show upcoming bookings on Manage Team</span><span class="ta-tag">TA</span></li>
+              <li><span class="feat-ice">13</span><span class="feat-name">Link to make a booking from Manage Team</span><span class="ta-tag">TA</span></li>
+              <li><span class="feat-ice">12</span><span class="feat-name">Flexible permissions (custom roles)</span></li>
+              <li><span class="feat-ice">—</span><span class="feat-name">Team Assignment & Role Foundations <span class="commit-flag">COMMITTED</span></span></li>
+              <li><span class="feat-ice">—</span><span class="feat-name">Guided Setup (slide 13) <span class="commit-flag">COMMITTED</span></span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="theme-meta">
+          <div class="theme-meta-item">
+            <span class="theme-meta-label">Main metric</span>
+            <span class="theme-meta-val">Admin engagement · Setup completion rate</span>
+          </div>
+          <div class="theme-meta-item">
+            <span class="theme-meta-label">Primary persona</span>
+            <span class="theme-meta-val">Company Administrator + Travel Arranger</span>
+          </div>
+          <div class="theme-meta-item">
+            <span class="theme-meta-label">Anchor PRDs</span>
+            <span class="theme-meta-val">Team Assignment & Role Foundations · Admin Re-design PCB · Slide 13</span>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- T4 -->
+  <section id="t4">
+    <article class="theme-deep t4">
+      <div class="theme-deep-head">
+        <div class="theme-top-line">
+          <span class="theme-big-num">04</span>
+          <span class="theme-layer-tag mature">Mature · More capable</span>
+          <span class="theme-ta-indicator limited">Travel Arrangers: Limited</span>
+        </div>
+        <h3 class="theme-deep-title">Ready for larger companies</h3>
+        <p class="theme-bet">Prospective customers with 50+ travellers tell us hierarchy, SSO, and enterprise-grade onboarding are barriers to joining B4B. We need to qualify for these companies before they sign — not promise it later.</p>
+        <div class="theme-stats">
+          <span class="stat-pill">100+ user co = 156 bookings/month vs 2.7</span>
+          <span class="stat-pill">240k EU medium enterprises (50–249)</span>
+          <span class="stat-pill">97% of base = ≤5 users today</span>
+        </div>
+      </div>
+      <div class="theme-deep-body">
+        <div class="theme-body-grid">
+          <div>
+            <div class="theme-block-label">Why this matters</div>
+            <p class="theme-why">The Team Assignment & Role Foundations PRD documents prospect interviews where lack of organisational hierarchy is named as a barrier to switching to B4B. This theme covers the features that are commodity at enterprise scale but missing from B4B today: SSO and Workday-style onboarding APIs, legal entity / VAT / tax capture at company level, modern approval workflows (Slack/Teams not just email), bulk traveller upload, modern policy guardrails across hotel/flight/car.</p>
+            <p class="theme-why" style="margin-top: 0.75rem;">Most features here are admin-facing rather than Travel-Arranger-facing, which is why the TA relevance is limited. But hierarchy specifically benefits TAs in large orgs — limiting their visibility to their own team only.</p>
+          </div>
+          <div>
+            <div class="theme-block-label">Top features by ICE</div>
+            <ul class="theme-feats">
+              <li><span class="feat-ice mid">40</span><span class="feat-name">Generic Onboarding APIs (Workday, etc.)</span></li>
+              <li><span class="feat-ice">36</span><span class="feat-name">Company creation stores legal entity, tax, VAT, address</span></li>
+              <li><span class="feat-ice">24</span><span class="feat-name">Modern approval workflows via Slack/Teams</span></li>
+              <li><span class="feat-ice">20</span><span class="feat-name">Bulk traveller uploads</span></li>
+              <li><span class="feat-ice">12</span><span class="feat-name">Modern company policy guardrails (hotel/flight/car)</span></li>
+              <li><span class="feat-ice">—</span><span class="feat-name">SSO v3 (also serves Activate) <span class="commit-flag">COMMITTED</span></span></li>
+              <li><span class="feat-ice">—</span><span class="feat-name">Hierarchy beyond 1 level (research phase)</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="theme-meta">
+          <div class="theme-meta-item">
+            <span class="theme-meta-label">Main metric</span>
+            <span class="theme-meta-val">50+ traveller prospects entering funnel · Win rate of large-co prospects</span>
+          </div>
+          <div class="theme-meta-item">
+            <span class="theme-meta-label">Primary persona</span>
+            <span class="theme-meta-val">Company Administrator (enterprise-focused)</span>
+          </div>
+          <div class="theme-meta-item">
+            <span class="theme-meta-label">Anchor PRD</span>
+            <span class="theme-meta-val">Team Assignment & Role Foundations (later phases)</span>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============ TA OVERVIEW PANEL ============ -->
+  <section id="ta-overview">
+    <div class="sec-head">
+      <div class="sec-num">05 · Travel Arrangers</div>
+      <h2 class="sec-title">Where Company Management serves Travel Arrangers</h2>
+      <p class="sec-subtitle">TAs have their own dedicated investment section (slide 15 onwards). But a lot of Company Management work also lands on them — Manage Team is the TA's home screen, guest-at-checkout is the TA's signature workflow, and team hierarchy gives TAs scoped visibility. This view makes the overlap explicit.</p>
+    </div>
+
+    <div class="ta-panel">
+      <div class="ta-panel-head">
+        <span class="ta-panel-tag">TA Relevance</span>
+        <span class="ta-panel-title">By theme</span>
+      </div>
+      <div class="ta-panel-grid">
+        <div class="ta-panel-cell t1">
+          <div class="ta-panel-cell-num">01 · Frictionless team growth</div>
+          <div class="ta-panel-cell-rel partial">Partial</div>
+          <div class="ta-panel-cell-desc">Arranger-can-invite (with admin approval) is direct. Name capture at invite enables immediate TA booking. Otherwise admin-facing.</div>
+        </div>
+        <div class="ta-panel-cell t2">
+          <div class="ta-panel-cell-num">02 · Unlock latent members</div>
+          <div class="ta-panel-cell-rel strong">Strong</div>
+          <div class="ta-panel-cell-desc">Guest-at-checkout is the signature TA workflow per R5: "lets travel arrangers rapidly invite new members at the critical point of transaction."</div>
+        </div>
+        <div class="ta-panel-cell t3">
+          <div class="ta-panel-cell-num">03 · A company set up to succeed</div>
+          <div class="ta-panel-cell-rel strong">Strong</div>
+          <div class="ta-panel-cell-desc">Manage Team is the TA's home screen. PCB experiments (upcoming bookings, link to book) are TA-facing. Team hierarchy enables scoped TA visibility.</div>
+        </div>
+        <div class="ta-panel-cell t4">
+          <div class="ta-panel-cell-num">04 · Ready for larger companies</div>
+          <div class="ta-panel-cell-rel limited">Limited</div>
+          <div class="ta-panel-cell-desc">Mostly admin-facing enterprise features. But hierarchy and modern approval workflows benefit TAs in large companies.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURE MAP ============ -->
+  <section id="featmap">
+    <div class="sec-head">
+      <div class="sec-num">06 · Validation</div>
+      <h2 class="sec-title">All ~30 features fit clearly into the four themes</h2>
+      <p class="sec-subtitle">Sorted by ICE score within each column. The CSV has 34 rows total, with a handful of duplicates — ~30 unique features. Grey items are committed or in a separate workstream. TA-flagged items are particularly relevant to Travel Arrangers.</p>
+    </div>
+
+    <div class="legend">
+      <div class="legend-item"><span class="legend-swatch" style="background:rgba(14,168,152,0.4);"></span>ICE ≥ 80</div>
+      <div class="legend-item"><span class="legend-swatch" style="background:rgba(217,119,6,0.35);"></span>ICE 40–79</div>
+      <div class="legend-item"><span class="legend-swatch" style="background:var(--bg-soft);"></span>ICE &lt; 40 or unscored</div>
+      <div class="legend-item"><span class="legend-swatch" style="background:rgba(17,17,24,0.85);"></span>Committed</div>
+      <div class="legend-item"><span class="legend-swatch" style="background:var(--ta);"></span>TA = Travel Arranger relevant</div>
+    </div>
+
+    <div class="featmap">
+      <div class="featmap-col">
+        <div class="featmap-col-head">
+          <span class="featmap-dot t1"></span>
+          <span class="featmap-col-title">01 · Frictionless growth</span>
+          <span class="featmap-count">8 items</span>
+        </div>
+        <div class="featmap-item"><span class="feat-ice high">80</span><span class="feat-name">Assign role when inviting colleague</span></div>
+        <div class="featmap-item"><span class="feat-ice">36</span><span class="feat-name">Add first/last name to invite (R4)</span><span class="ta-tag">TA</span></div>
+        <div class="featmap-item"><span class="feat-ice">30</span><span class="feat-name">Let Arrangers invite, with admin approval</span><span class="ta-tag">TA</span></div>
+        <div class="featmap-item"><span class="feat-ice">30</span><span class="feat-name">Nudge solo accounts to invite colleagues</span></div>
+        <div class="featmap-item"><span class="feat-ice">24</span><span class="feat-name">New Invite Flow — Manage Invitations (R3)</span></div>
+        <div class="featmap-item"><span class="feat-ice">15</span><span class="feat-name">Slack/Teams shareable links</span></div>
+        <div class="featmap-item"><span class="feat-ice">13</span><span class="feat-name">Show invite link on dashboard</span></div>
+        <div class="featmap-item"><span class="feat-ice">13</span><span class="feat-name">Team allocation when inviting</span><span class="ta-tag">TA</span></div>
+      </div>
+
+      <div class="featmap-col">
+        <div class="featmap-col-head">
+          <span class="featmap-dot t2"></span>
+          <span class="featmap-col-title">02 · Unlock latent</span>
+          <span class="featmap-count">5 items</span>
+        </div>
+        <div class="featmap-item"><span class="feat-ice mid">40</span><span class="feat-name">Inform when users sit in another company</span></div>
+        <div class="featmap-item"><span class="feat-ice">30</span><span class="feat-name">Add guests to team at checkout (R5)</span><span class="ta-tag">TA</span></div>
+        <div class="featmap-item"><span class="feat-ice">30</span><span class="feat-name">Convert guests to travel profiles (R5)</span><span class="ta-tag">TA</span></div>
+        <div class="featmap-item"><span class="feat-ice">0</span><span class="feat-name">Rename the "guest" term</span></div>
+        <div class="featmap-item"><span class="feat-ice">0</span><span class="feat-name">Create profile without inviting</span><span class="ta-tag">TA</span></div>
+      </div>
+
+      <div class="featmap-col">
+        <div class="featmap-col-head">
+          <span class="featmap-dot t3"></span>
+          <span class="featmap-col-title">03 · Set up to succeed</span>
+          <span class="featmap-count">11 items</span>
+        </div>
+        <div class="featmap-item"><span class="feat-ice mid">45</span><span class="feat-name">Enable team creation and assignment</span><span class="ta-tag">TA</span></div>
+        <div class="featmap-item"><span class="feat-ice">24</span><span class="feat-name">Modern Company Management front end</span></div>
+        <div class="featmap-item"><span class="feat-ice">20</span><span class="feat-name">Rename "Company" → "Organisation"</span></div>
+        <div class="featmap-item"><span class="feat-ice">20</span><span class="feat-name">Rename "Payments" within B4B</span></div>
+        <div class="featmap-item"><span class="feat-ice">16</span><span class="feat-name">Profile lang/currency override</span></div>
+        <div class="featmap-item"><span class="feat-ice">13</span><span class="feat-name">Show Manage Team on dashboard</span><span class="ta-tag">TA</span></div>
+        <div class="featmap-item"><span class="feat-ice">13</span><span class="feat-name">Show upcoming bookings on Manage Team</span><span class="ta-tag">TA</span></div>
+        <div class="featmap-item"><span class="feat-ice">13</span><span class="feat-name">Link to make a booking from Manage Team</span><span class="ta-tag">TA</span></div>
+        <div class="featmap-item"><span class="feat-ice">12</span><span class="feat-name">Flexible permissions (custom roles)</span></div>
+        <div class="featmap-item"><span class="feat-ice">0</span><span class="feat-name">Profile — make email address editable</span></div>
+        <div class="featmap-item committed"><span class="feat-ice">—</span><span class="feat-name">Team Assignment & Role Foundations · Guided Setup (slide 13)</span></div>
+      </div>
+
+      <div class="featmap-col">
+        <div class="featmap-col-head">
+          <span class="featmap-dot t4"></span>
+          <span class="featmap-col-title">04 · Ready for larger</span>
+          <span class="featmap-count">6 items</span>
+        </div>
+        <div class="featmap-item"><span class="feat-ice mid">40</span><span class="feat-name">Generic Onboarding APIs (Workday)</span></div>
+        <div class="featmap-item"><span class="feat-ice">36</span><span class="feat-name">Company creation: legal entity, tax, VAT, address</span></div>
+        <div class="featmap-item"><span class="feat-ice">24</span><span class="feat-name">Modern Approval workflows (Slack/Teams)</span></div>
+        <div class="featmap-item"><span class="feat-ice">20</span><span class="feat-name">Bulk traveller uploads</span></div>
+        <div class="featmap-item"><span class="feat-ice">12</span><span class="feat-name">Modern company policy guardrails</span></div>
+        <div class="featmap-item committed"><span class="feat-ice">—</span><span class="feat-name">SSO v3 (cross-listed with Activate)</span></div>
+        <div style="padding: 0.6rem 0; font-size: 0.7rem; color: var(--faint); font-style: italic; line-height: 1.45;">
+          Hierarchy beyond 1 level is in research per the Team Assignment PRD — Q4+ work.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DIAGNOSIS ============ -->
+  <section id="diagnosis">
+    <div class="sec-head">
+      <div class="sec-num">07 · Why this approach</div>
+      <h2 class="sec-title">Compared to the other options we considered</h2>
+      <p class="sec-subtitle">A direct look at what each option does well, what it does not, and why the recommendation wins.</p>
+    </div>
+
+    <div class="diag">
+      <div class="diag-row head">
+        <div>Option</div>
+        <div>What it does well</div>
+        <div>Why it does not work for Bcom</div>
+      </div>
+
+      <div class="diag-row">
+        <div class="diag-name">Slide-aligned (3 themes)<br><span style="font-family:var(--font-mono); font-size:0.65rem; font-weight:400; color:var(--faint);">Growing / Guided Setup / Insights</span></div>
+        <div class="diag-cell good">Maps directly to existing slides 11, 13, 14. Minimal rework.</div>
+        <div class="diag-cell">"Growing Companies" lumps together two different motions: <strong>growing existing companies</strong> (invite friction) and <strong>qualifying for new larger ones</strong> (enterprise features). These are different bets for different audiences. Insights & Analytics is also not detailed enough in current scope to anchor a theme on its own.</div>
+      </div>
+
+      <div class="diag-row">
+        <div class="diag-name">Mirror Activate<br><span style="font-family:var(--font-mono); font-size:0.65rem; font-weight:400; color:var(--faint);">Foundation + Differentiation by user segment</span></div>
+        <div class="diag-cell good">Visual consistency with the Activate themes plan. Familiar shape.</div>
+        <div class="diag-cell">The natural cut for Company Management is <strong>by company stage, not by user segment</strong>. We do not have user-group differentiation here the way Activate has TA vs Promoted. Forcing the same shape blurs the actual logic.</div>
+      </div>
+
+      <div class="diag-row">
+        <div class="diag-name">Three themes<br><span style="font-family:var(--font-mono); font-size:0.65rem; font-weight:400; color:var(--faint);">collapse T1+T2 into one</span></div>
+        <div class="diag-cell good">Tighter deck. Easier to memorise.</div>
+        <div class="diag-cell">T1 (invite mechanics) and T2 (latent member conversion) have <strong>different mechanics, different teams, different metrics</strong>. T1 is admin-driven invite flow modernisation. T2 is TA-driven in-flow capture at checkout. Collapsing them buries the second one — which is where the largest hidden pool sits (83% of companies have guest travellers).</div>
+      </div>
+
+      <div class="diag-row recommended">
+        <div class="diag-name">Recommendation<br><span style="font-family:var(--font-mono); font-size:0.65rem; font-weight:400; color:var(--faint);">2 Grow + 2 Mature</span><span class="badge">SHIP</span></div>
+        <div class="diag-cell good">The two-layer Grow + Mature structure matches the company lifecycle. <strong>Why these four:</strong> two are about increasing members per company (the single biggest driver of bookings); two are about increasing what a company can do (sticking SMBs, qualifying for larger prospects). All ~30 features fit. TA relevance is called out per theme without forcing a separate TA theme that would conflict with slide 15+.</div>
+        <div class="diag-cell">Watch out: T4 (Ready for larger) is mostly conceptual today — most features are ICE 20–40 and there is no Q3 deliverable on hierarchy beyond one level. Position as "qualifying foundations now, hierarchy depth in Q4+."</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PUSHBACK Q&A ============ -->
+  <section id="pushback">
+    <div class="sec-head">
+      <div class="sec-num">08 · Pre-meeting prep</div>
+      <h2 class="sec-title">Questions Bcom will ask. Practise the answers.</h2>
+      <p class="sec-subtitle">Each of these will be asked in some form. How confidently we answer them shows how strong the framing is. Do not enter the meeting without a prepared answer to all six.</p>
+    </div>
+
+    <div class="qa-list">
+      <div class="qa-item">
+        <div class="qa-q">Where is the Travel Arranger theme? You said TAs are your most valuable user group.</div>
+        <div class="qa-a">TAs have their own dedicated investment section starting at slide 15 — that is where the holistic TA story lives. Inside Company Management, we have called out which themes serve TAs directly: <strong>T2 (Unlock latent members) is the TA's signature workflow</strong> (guest-at-checkout), <strong>T3 (Set up to succeed) is the TA's home screen</strong> (Manage Team experiments), T1 partially serves them (Arranger-can-invite), T4 less so. We chose not to create a separate TA theme here because it would compete with the dedicated TA section and split the message.</div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q">Why split T1 and T2 if they are both about growing the team?</div>
+        <div class="qa-a">Different mechanics. T1 is admin-led invite modernisation (Release 3 + 4 PRD): rebuild the form, capture name, expand who can invite. T2 is TA-led in-flow capture (Release 5 PRD): convert guests at checkout, catch users sitting in the wrong company. Different engineering paths, different metrics, different evidence base. Collapsing them <strong>buries the latent-member pool</strong>, which is where the biggest hidden growth sits — 83% of companies have guest travellers; 86% of profiles in 2+ user companies are guests.</div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q">Where is Insights & Analytics? Slide 14 has it as a theme.</div>
+        <div class="qa-a">Insights & Analytics <strong>is</strong> a real theme, but the scope and feature set is being developed separately and is not in this deck. Slide 14 is a placeholder for that section. Including it here without backing detail would weaken the messaging. We will cover it in its own slot when ready.</div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q">How does the Eos modernisation tie into this?</div>
+        <div class="qa-a">T3 and T4 are both <strong>load-bearing on Eos</strong>. Modern Company Management front end, Guided Setup, Team Assignment service, modern approval workflows, modern policy guardrails — these all require the modern stack. The Tech Modernisation section (slides 20–22) carries the technical narrative. In this section we reference Eos as the enabler without re-explaining it.</div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q">What is the single metric that ties this whole story together?</div>
+        <div class="qa-a"><strong>% of B4B companies with 2+ active users.</strong> It maps directly to the strategic objective, every PRD's evidence base, and the slide 2 strategy. Today: ~3% of our base is multi-user. Even modest movement on this number compounds heavily — going from 1 to 2 users alone is +25% next-booking likelihood and -20% churn.</div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q">How does this connect to what Bcom invests in on their side?</div>
+        <div class="qa-a">Two direct connections. <strong>(1) Identity/auth:</strong> SSO v3, Workday-style onboarding APIs, and domain enforcement (slide 11's "company quality gaps") all touch Bcom-side identity infrastructure. We need joint roadmap alignment here. <strong>(2) Data quality:</strong> the retroactive merging of duplicate companies and enforcing corporate domains over free email domains needs Bcom's input on the user-record side. These are joint problems, not B4B asks.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DECK FLOW ============ -->
+  <section id="deck">
+    <div class="sec-head">
+      <div class="sec-num">09 · Slide flow</div>
+      <h2 class="sec-title">How this fits into the existing AMS deck</h2>
+      <p class="sec-subtitle">It maps onto slides 10–14 of the current Q3 deck. It fills the two placeholder slides (12 and 14) with concrete content, and recommends one new overview slide at the start.</p>
+    </div>
+
+    <div class="deck-flow">
+      <div class="deck-slide">
+        <span class="deck-num">10</span>
+        <span class="deck-title">The Company (section opener)</span>
+        <span class="deck-purpose">Section opener — unchanged.</span>
+      </div>
+      <div class="deck-slide" style="border-left: 4px solid var(--text);">
+        <span class="deck-num">10a · NEW</span>
+        <span class="deck-title">Bigger companies. Better companies.</span>
+        <span class="deck-purpose">The overview slide. Sets out the main message and shows the Grow + Mature structure with TA relevance markers. Sets up everything that follows.</span>
+      </div>
+      <div class="deck-slide" style="border-left: 4px solid var(--c1);">
+        <span class="deck-num">11</span>
+        <span class="deck-title">Growing Companies (existing context slide)</span>
+        <span class="deck-purpose">Belongs to T1 + T2. Existing slide — keep as is for now. It shows the joining mechanisms (Invite, JEC, Invite to Team, SSO, Shareable link) plus company quality gaps. Strong narrative anchor.</span>
+      </div>
+      <div class="deck-slide" style="border-left: 4px solid var(--c1);">
+        <span class="deck-num">12 · FILL</span>
+        <span class="deck-title">Frictionless team growth (T1)</span>
+        <span class="deck-purpose">Currently a placeholder ("Growing Companies · Investment Theme"). Fill with T1 deep dive: invite modernisation (R3, R4), Arranger-can-invite, role-at-invite, shareable links. Anchor metric: members added per company per month.</span>
+      </div>
+      <div class="deck-slide" style="border-left: 4px solid var(--c2); border-style: dashed;">
+        <span class="deck-num">12a · OPTIONAL</span>
+        <span class="deck-title">Unlock latent members (T2)</span>
+        <span class="deck-purpose">Either add a new slide here for T2 (guest-at-checkout, R5) or fold it into slide 12. <strong>Recommendation: dedicated slide</strong>, since this is the highest-leverage hidden pool and has its own R5 evidence.</span>
+      </div>
+      <div class="deck-slide" style="border-left: 4px solid var(--c3);">
+        <span class="deck-num">13</span>
+        <span class="deck-title">Guided Setup / A company set up to succeed (T3)</span>
+        <span class="deck-purpose">Belongs to T3. Existing slide — strong as it is. Add the Mature-layer tag and a TA relevance marker.</span>
+      </div>
+      <div class="deck-slide" style="border-left: 4px solid var(--c4);">
+        <span class="deck-num">14 · FILL</span>
+        <span class="deck-title">Ready for larger companies (T4) — OR — Insights & Analytics</span>
+        <span class="deck-purpose">Currently a placeholder ("Insights & Analytics · Investment Theme"). <strong>Decision needed:</strong> use this slot for T4 and move Insights & Analytics to its own dedicated section later, OR keep this for Insights & Analytics and put T4 in a new slide 14a. The cleaner deck does T4 here.</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+</body>
+</html>

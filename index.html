@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amsterdam · B4B Q3 2026 Strategy</title>
+<meta name="description" content="Serko B4B · Investment themes for the Amsterdam Q3 2026 face-to-face">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&family=DM+Mono:wght@400;500&family=Fraunces:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #F7F5F2;
+    --bg-soft: #EFEDE8;
+    --dark: #1A1625;
+    --card: #FFFFFF;
+    --text: #111118;
+    --muted: #5C5869;
+    --faint: #8E8A98;
+    --border: rgba(17,17,24,0.1);
+    --border-soft: rgba(17,17,24,0.06);
+
+    --c1: #0EA898;
+    --c1-bg: #EFFCFA;
+    --c1-text: #0A7A6E;
+    --c2: #6D28D9;
+    --c2-bg: #F4F1FF;
+    --c2-text: #4C1D95;
+    --c3: #DB2777;
+    --c3-bg: #FDF2F8;
+    --c3-text: #9D174D;
+    --c4: #D97706;
+    --c4-bg: #FFFBEB;
+    --c4-text: #92400E;
+    --c5: #2563EB;
+    --c5-bg: #EFF6FF;
+    --c5-text: #1E3A8A;
+    --c6: #059669;
+    --c6-bg: #ECFDF5;
+    --c6-text: #064E3B;
+    --c7: #7C3AED;
+    --c7-bg: #F5F3FF;
+    --c7-text: #5B21B6;
+
+    --font-head: 'Outfit', sans-serif;
+    --font-display: 'Fraunces', serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+    min-height: 100vh;
+  }
+
+  /* ============ TOP BAR ============ */
+  .topbar {
+    background: var(--dark);
+    color: white;
+    padding: 1rem 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 4px solid;
+    border-image: linear-gradient(90deg, var(--c1) 0%, var(--c1) 14%, var(--c2) 14%, var(--c2) 28%, var(--c3) 28%, var(--c3) 42%, var(--c4) 42%, var(--c4) 56%, var(--c5) 56%, var(--c5) 70%, var(--c6) 70%, var(--c6) 84%, var(--c7) 84%) 1;
+  }
+  .topbar-brand {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    color: rgba(255,255,255,0.42);
+    text-transform: uppercase;
+  }
+  .topbar-meta {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.38);
+  }
+  .topbar-meta span {
+    color: rgba(255,255,255,0.7);
+  }
+
+  /* ============ HERO ============ */
+  .hero {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 5rem 2.5rem 3rem;
+  }
+  .hero-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: 3.4rem;
+    font-weight: 600;
+    line-height: 1.04;
+    letter-spacing: -0.025em;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+    max-width: 20ch;
+  }
+  .hero h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--muted);
+  }
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--muted);
+    line-height: 1.55;
+    max-width: 62ch;
+  }
+  .hero-meta {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2.25rem;
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.05em;
+    color: var(--faint);
+    flex-wrap: wrap;
+  }
+  .hero-meta span { display: flex; align-items: center; gap: 0.4rem; }
+  .hero-meta span::before {
+    content: "";
+    width: 4px; height: 4px;
+    background: var(--faint);
+    border-radius: 50%;
+  }
+
+  /* ============ SECTION HEAD ============ */
+  .sec-container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 1.5rem 2.5rem 3rem;
+  }
+  .sec-head {
+    margin-bottom: 1.75rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+  .sec-num {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    color: var(--faint);
+    text-transform: uppercase;
+    margin-bottom: 0.55rem;
+  }
+  .sec-title {
+    font-family: var(--font-head);
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+  .sec-sub {
+    font-size: 0.93rem;
+    color: var(--muted);
+    line-height: 1.55;
+    max-width: 62ch;
+  }
+
+  /* ============ SECTION CARDS ============ */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1.25rem;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.75rem 1.75rem 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s;
+  }
+  .card.live { cursor: pointer; }
+  .card.live:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px -12px rgba(17,17,24,0.18);
+    border-color: rgba(17,17,24,0.18);
+  }
+  .card.draft {
+    background: linear-gradient(180deg, var(--bg-soft) 0%, var(--card) 100%);
+    cursor: default;
+  }
+  .card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 3px;
+  }
+  .card.c1::before { background: var(--c1); }
+  .card.c2::before { background: var(--c2); }
+  .card.c3::before { background: var(--c3); }
+  .card.c4::before { background: var(--c4); }
+  .card.c5::before { background: var(--c5); }
+  .card.c6::before { background: var(--c6); }
+  .card.c7::before { background: var(--c7); }
+  .card.draft::before { opacity: 0.4; }
+
+  .card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.1rem;
+  }
+  .card-num {
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.14em;
+    color: var(--faint);
+  }
+  .card.c1 .card-num { color: var(--c1-text); }
+  .card.c2 .card-num { color: var(--c2-text); }
+  .card.c3 .card-num { color: var(--c3-text); }
+  .card.c4 .card-num { color: var(--c4-text); }
+  .card.c5 .card-num { color: var(--c5-text); }
+  .card.c6 .card-num { color: var(--c6-text); }
+  .card.c7 .card-num { color: var(--c7-text); }
+  .card.draft .card-num { color: var(--faint); }
+
+  .status {
+    font-family: var(--font-mono);
+    font-size: 0.55rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.55rem;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+  .status.live {
+    background: rgba(14,168,152,0.12);
+    color: var(--c1-text);
+  }
+  .status.draft {
+    background: rgba(17,17,24,0.06);
+    color: var(--faint);
+  }
+
+  .card-title {
+    font-family: var(--font-head);
+    font-size: 1.45rem;
+    font-weight: 700;
+    line-height: 1.18;
+    letter-spacing: -0.018em;
+    margin-bottom: 0.55rem;
+    max-width: 18ch;
+  }
+  .card-tag {
+    font-family: var(--font-display);
+    font-size: 0.96rem;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.45;
+    color: var(--muted);
+    margin-bottom: 1.4rem;
+    flex-grow: 1;
+  }
+  .card-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-soft);
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    color: var(--faint);
+  }
+  .card-arrow {
+    font-family: var(--font-head);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+  .card.c1 .card-arrow { color: var(--c1-text); }
+  .card.c2 .card-arrow { color: var(--c2-text); }
+  .card.c3 .card-arrow { color: var(--c3-text); }
+  .card.c4 .card-arrow { color: var(--c4-text); }
+  .card.c5 .card-arrow { color: var(--c5-text); }
+  .card.c6 .card-arrow { color: var(--c6-text); }
+  .card.c7 .card-arrow { color: var(--c7-text); }
+
+  /* ============ NOTE BLOCK ============ */
+  .note {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.4rem 1.6rem;
+    margin-top: 1.5rem;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: var(--muted);
+  }
+  .note strong { color: var(--text); font-weight: 600; }
+  .note-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--faint);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  /* ============ FOOTER ============ */
+  footer {
+    max-width: 1080px;
+    margin: 4rem auto 0;
+    padding: 2.5rem 2.5rem 4rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .foot-block {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.05em;
+    color: var(--faint);
+    line-height: 1.7;
+  }
+  .foot-block a {
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--faint);
+  }
+  .foot-block a:hover { color: var(--text); }
+  .foot-label {
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--faint);
+    margin-bottom: 0.35rem;
+    font-size: 0.55rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 780px) {
+    .grid { grid-template-columns: 1fr; }
+    .hero { padding: 3rem 1.5rem 2rem; }
+    .hero h1 { font-size: 2.3rem; }
+    .sec-container { padding: 1rem 1.5rem 2rem; }
+    .topbar { padding: 0.85rem 1.5rem; }
+    footer { padding: 2rem 1.5rem 3rem; flex-direction: column; gap: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ TOP BAR ============ -->
+<div class="topbar">
+  <div class="topbar-brand">Serko · B4B</div>
+  <div class="topbar-meta">Amsterdam <span>2026</span></div>
+</div>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="hero-eyebrow">AMS Face-to-face · Q3 2026 Strategy</div>
+  <h1>The Amsterdam plan.<br><em>Investment themes by area.</em></h1>
+  <p class="hero-sub">A live deck of investment themes for the Bcom face-to-face. Each section is a standalone strategy artefact in the same design language. New sections drop in as they are written.</p>
+  <div class="hero-meta">
+    <span>2 sections live</span>
+    <span>5 in draft</span>
+    <span>Q3 2026 roadmap</span>
+    <span>For the AMS visit</span>
+  </div>
+</header>
+
+<!-- ============ LIVE SECTIONS ============ -->
+<div class="sec-container">
+  <div class="sec-head">
+    <div class="sec-num">01 · Available now</div>
+    <h2 class="sec-title">Sections ready to share</h2>
+    <p class="sec-sub">These two sections are complete and reviewed. Open either to see the full investment themes, feature map, comparison, and Bcom Q&A prep.</p>
+  </div>
+
+  <div class="grid">
+    <a class="card live c1" href="/activate">
+      <div class="card-top">
+        <span class="card-num">01 · ACTIVATE</span>
+        <span class="status live">Live</span>
+      </div>
+      <div class="card-title">Acquisition &amp; Activation</div>
+      <div class="card-tag">One sign-up flow. Four focus areas. Foundation + differentiation for Travel Arrangers and Promoted Users.</div>
+      <div class="card-foot">
+        <span>4 themes · 42 features</span>
+        <span class="card-arrow">Open →</span>
+      </div>
+    </a>
+
+    <a class="card live c2" href="/company">
+      <div class="card-top">
+        <span class="card-num">02 · COMPANY</span>
+        <span class="status live">Live</span>
+      </div>
+      <div class="card-title">Company Management</div>
+      <div class="card-tag">Bigger and better companies. Grow + mature, across four focus areas. Multi-user companies are everything.</div>
+      <div class="card-foot">
+        <span>4 themes · ~30 features</span>
+        <span class="card-arrow">Open →</span>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- ============ DRAFT SECTIONS ============ -->
+<div class="sec-container">
+  <div class="sec-head">
+    <div class="sec-num">02 · In draft</div>
+    <h2 class="sec-title">Sections being developed</h2>
+    <p class="sec-sub">These sections will follow the same format. Listed here so the full plan is visible end-to-end. Cards become clickable as each section is finished.</p>
+  </div>
+
+  <div class="grid">
+    <div class="card draft c3">
+      <div class="card-top">
+        <span class="card-num">03 · TRAVEL ARRANGER</span>
+        <span class="status draft">In draft</span>
+      </div>
+      <div class="card-title">The Travel Arranger</div>
+      <div class="card-tag">The most valuable persona in B4B. Dedicated investment to make TAs faster, more confident, and more autonomous.</div>
+      <div class="card-foot">
+        <span>Slides 15+</span>
+        <span class="card-arrow" style="opacity:0.35;">—</span>
+      </div>
+    </div>
+
+    <div class="card draft c4">
+      <div class="card-top">
+        <span class="card-num">04 · TRIP OPTIONS</span>
+        <span class="status draft">In draft</span>
+      </div>
+      <div class="card-title">Share Trip Options</div>
+      <div class="card-tag">Letting Travel Arrangers send proposed trips to travellers for selection. Speeds up the booking loop.</div>
+      <div class="card-foot">
+        <span>Slide 16</span>
+        <span class="card-arrow" style="opacity:0.35;">—</span>
+      </div>
+    </div>
+
+    <div class="card draft c5">
+      <div class="card-top">
+        <span class="card-num">05 · SUPPLY</span>
+        <span class="status draft">In draft</span>
+      </div>
+      <div class="card-title">Supply &amp; Foundations</div>
+      <div class="card-tag">Expanding inventory and content, including mobile-first booking surfaces and supplier coverage.</div>
+      <div class="card-foot">
+        <span>Slide 17</span>
+        <span class="card-arrow" style="opacity:0.35;">—</span>
+      </div>
+    </div>
+
+    <div class="card draft c6">
+      <div class="card-top">
+        <span class="card-num">06 · PAYMENT PARITY</span>
+        <span class="status draft">In draft</span>
+      </div>
+      <div class="card-title">Hotel Booking &amp; Payment Parity</div>
+      <div class="card-tag">Closing the gap between B4B and Bcom-direct on payment options, hotel booking flow, and price competitiveness.</div>
+      <div class="card-foot">
+        <span>Slide 18</span>
+        <span class="card-arrow" style="opacity:0.35;">—</span>
+      </div>
+    </div>
+
+    <div class="card draft c7">
+      <div class="card-top">
+        <span class="card-num">07 · TECH MOD</span>
+        <span class="status draft">In draft</span>
+      </div>
+      <div class="card-title">Technology Modernisation</div>
+      <div class="card-tag">Eos migration, modern clients, AI / personalisation foundation. The enabler beneath every other section.</div>
+      <div class="card-foot">
+        <span>Slides 20–22</span>
+        <span class="card-arrow" style="opacity:0.35;">—</span>
+      </div>
+    </div>
+
+    <div class="card draft" style="opacity:0.55;">
+      <div class="card-top">
+        <span class="card-num">+</span>
+        <span class="status draft">Future</span>
+      </div>
+      <div class="card-title" style="color:var(--faint);">Future sections</div>
+      <div class="card-tag">As new investment areas are written up, they slot in here. Add a new HTML file to the repo and a card to <code style="font-family:var(--font-mono); font-size:0.78rem;">index.html</code>.</div>
+      <div class="card-foot">
+        <span>—</span>
+        <span class="card-arrow" style="opacity:0.35;">—</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="note">
+    <span class="note-eyebrow">Note on format</span>
+    Each section follows the same shape: <strong>thesis spine</strong> → <strong>two-layer structure</strong> → <strong>theme deep-dives</strong> → <strong>feature map</strong> → <strong>comparison vs alternatives</strong> → <strong>Bcom Q&A prep</strong> → <strong>slide flow</strong>. This consistency lets a Bcom stakeholder navigate any section the same way once they've read one.
+  </div>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="foot-block">
+    <div class="foot-label">Repository</div>
+    <a href="https://github.com/JamesDylan/amsterdam" target="_blank" rel="noopener">github.com/JamesDylan/amsterdam</a>
+  </div>
+  <div class="foot-block">
+    <div class="foot-label">Authors</div>
+    James Scholz<br>
+    Anna Bondarenko<br>
+    Jacqui de Bray
+  </div>
+  <div class="foot-block">
+    <div class="foot-label">Status</div>
+    Draft · Pre-AMS<br>
+    Q3 2026 cycle
+  </div>
+  <div class="foot-block">
+    <div class="foot-label">Deployment</div>
+    Vercel · auto-deploy on push to main
+  </div>
+</footer>
+
+</body>
+</html>

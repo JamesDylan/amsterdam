@@ -194,15 +194,14 @@
     overflow: hidden;
     transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s;
   }
-  .card.live { cursor: pointer; }
-  .card.live:hover {
+  a.card { cursor: pointer; }
+  a.card:hover {
     transform: translateY(-2px);
     box-shadow: 0 12px 32px -12px rgba(17,17,24,0.18);
     border-color: rgba(17,17,24,0.18);
   }
   .card.draft {
     background: linear-gradient(180deg, var(--bg-soft) 0%, var(--card) 100%);
-    cursor: default;
   }
   .card::before {
     content: "";

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Activate · Q3 2026 Plan · B4B (Simplified)</title>
+  <title>Growth Loops · Q3 2026 Plan · B4B (Simplified)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -30,7 +30,7 @@
       --border: rgba(17, 17, 24, 0.1);
       --border-soft: rgba(17, 17, 24, 0.06);
 
-      /* Foundation themes */
+      /* Grow themes */
       --c1: #0EA898;
       --c1-bg: #EFFCFA;
       --c1-text: #0A7A6E;
@@ -39,7 +39,7 @@
       --c2-bg: #F4F1FF;
       --c2-text: #4C1D95;
       --c2-soft: rgba(109, 40, 217, 0.08);
-      /* Differentiation themes */
+      /* Mature themes */
       --c3: #DB2777;
       --c3-bg: #FDF2F8;
       --c3-text: #9D174D;
@@ -48,6 +48,10 @@
       --c4-bg: #FFFBEB;
       --c4-text: #92400E;
       --c4-soft: rgba(217, 119, 6, 0.08);
+
+      /* TA accent (independent of theme colors) */
+      --ta: #1A1625;
+      --ta-bg: rgba(26, 22, 37, 0.07);
 
       --font-head: 'Outfit', sans-serif;
       --font-display: 'Fraunces', serif;
@@ -349,13 +353,7 @@
       text-transform: uppercase;
     }
 
-    .thesis-arrow {
-      display: inline-block;
-      margin: 0 0.4rem;
-      color: var(--faint);
-    }
-
-    /* ============ STRUCTURE 2x2 ============ */
+    /* ============ STRUCTURE ============ */
     .structure {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -486,7 +484,7 @@
       text-transform: uppercase;
     }
 
-    /* ============ THEME CARDS (DETAILED) ============ */
+    /* ============ THEME CARDS ============ */
     .theme-deep {
       background: var(--card);
       border: 1px solid var(--border);
@@ -522,6 +520,7 @@
       align-items: center;
       gap: 1rem;
       margin-bottom: 1.1rem;
+      flex-wrap: wrap;
     }
 
     .theme-big-num {
@@ -558,14 +557,59 @@
       font-weight: 500;
     }
 
-    .theme-layer-tag.foundation {
+    .theme-layer-tag.grow {
       background: rgba(17, 17, 24, 0.06);
       color: var(--muted);
     }
 
-    .theme-layer-tag.differentiation {
+    .theme-layer-tag.mature {
       background: rgba(17, 17, 24, 0.85);
       color: white;
+    }
+
+    .theme-ta-indicator {
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.65rem 0.3rem 0.4rem;
+      border-radius: 4px;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--ta-bg);
+      color: var(--ta);
+      border: 1px solid rgba(26, 22, 37, 0.12);
+    }
+
+    .theme-ta-indicator::before {
+      content: "TA";
+      background: var(--ta);
+      color: white;
+      padding: 0.12rem 0.35rem;
+      border-radius: 2px;
+      font-size: 0.52rem;
+      letter-spacing: 0.06em;
+    }
+
+    .theme-ta-indicator.strong {
+      background: rgba(26, 22, 37, 0.95);
+      color: white;
+      border-color: transparent;
+    }
+
+    .theme-ta-indicator.strong::before {
+      background: white;
+      color: var(--ta);
+    }
+
+    .theme-ta-indicator.partial {
+      opacity: 0.85;
+    }
+
+    .theme-ta-indicator.limited {
+      opacity: 0.55;
     }
 
     .theme-deep-title {
@@ -697,6 +741,23 @@
       color: var(--c4-text);
     }
 
+    .feat-name {
+      flex: 1;
+    }
+
+    .ta-tag {
+      font-family: var(--font-mono);
+      font-size: 0.52rem;
+      background: var(--ta);
+      color: white;
+      padding: 0.1rem 0.32rem;
+      border-radius: 2px;
+      letter-spacing: 0.08em;
+      margin-left: 0.4rem;
+      vertical-align: middle;
+      display: inline-block;
+    }
+
     .theme-meta {
       margin-top: 1.5rem;
       padding-top: 1.25rem;
@@ -726,7 +787,7 @@
       font-weight: 500;
     }
 
-    /* ============ FEATURE MAP TABLE ============ */
+    /* ============ FEATURE MAP ============ */
     .featmap {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -814,6 +875,13 @@
       flex: 1;
     }
 
+    .featmap-item .ta-tag {
+      font-size: 0.48rem;
+      padding: 0.08rem 0.28rem;
+      margin-left: 0.25rem;
+      margin-top: 0.05rem;
+    }
+
     .featmap-item.committed {
       background: linear-gradient(90deg, var(--bg-soft), transparent);
       margin: 0 -1rem;
@@ -832,7 +900,7 @@
       letter-spacing: 0.05em;
     }
 
-    /* ============ DIAGNOSIS / COMPARISON ============ */
+    /* ============ DIAGNOSIS ============ */
     .diag {
       background: var(--card);
       border: 1px solid var(--border);
@@ -905,7 +973,7 @@
       font-weight: 600;
     }
 
-    /* ============ PUSHBACK Q&A ============ */
+    /* ============ Q&A ============ */
     .qa-list {
       display: flex;
       flex-direction: column;
@@ -1075,6 +1143,7 @@
       background: white;
       border-radius: 6px;
       border-top: 3px solid;
+      position: relative;
     }
 
     .mockup-theme.mt1 {
@@ -1109,37 +1178,24 @@
       line-height: 1.25;
     }
 
-    .mockup-layer {
+    .mockup-theme .ta-mini {
       position: absolute;
-      top: 1rem;
-      right: 1.5rem;
+      top: 0.4rem;
+      right: 0.45rem;
       font-family: var(--font-mono);
-      font-size: 0.55rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--faint);
+      font-size: 0.4rem;
+      background: var(--ta);
+      color: white;
+      padding: 0.08rem 0.22rem;
+      border-radius: 2px;
+      letter-spacing: 0.05em;
     }
 
-    .mockup-bands {
-      position: absolute;
-      bottom: 6rem;
-      left: 2.25rem;
-      right: 2.25rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.6rem;
+    .mockup-theme .ta-mini.partial {
+      opacity: 0.55;
     }
 
-    .mockup-band {
-      font-family: var(--font-mono);
-      font-size: 0.55rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--faint);
-      padding: 0.3rem 0;
-    }
-
-    /* ============ EVIDENCE EXCERPTS ============ */
+    /* ============ EXCERPT ============ */
     .excerpt {
       background: var(--bg-soft);
       border-left: 3px solid var(--c2);
@@ -1174,6 +1230,7 @@
       font-size: 0.62rem;
       letter-spacing: 0.08em;
       color: var(--muted);
+      flex-wrap: wrap;
     }
 
     .legend-item {
@@ -1186,6 +1243,117 @@
       width: 14px;
       height: 8px;
       border-radius: 2px;
+    }
+
+    /* ============ TA OVERVIEW PANEL ============ */
+    .ta-panel {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.75rem 2rem;
+      margin-top: 1.25rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ta-panel::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 4px;
+      background: var(--ta);
+    }
+
+    .ta-panel-head {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .ta-panel-tag {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      background: var(--ta);
+      color: white;
+      padding: 0.25rem 0.55rem;
+      border-radius: 3px;
+    }
+
+    .ta-panel-title {
+      font-family: var(--font-head);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .ta-panel-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .ta-panel-cell {
+      padding: 0.85rem;
+      background: var(--bg-soft);
+      border-radius: 6px;
+      border-top: 3px solid;
+    }
+
+    .ta-panel-cell.t1 {
+      border-color: var(--c1);
+    }
+
+    .ta-panel-cell.t2 {
+      border-color: var(--c2);
+    }
+
+    .ta-panel-cell.t3 {
+      border-color: var(--c3);
+    }
+
+    .ta-panel-cell.t4 {
+      border-color: var(--c4);
+    }
+
+    .ta-panel-cell-num {
+      font-family: var(--font-mono);
+      font-size: 0.55rem;
+      color: var(--faint);
+      letter-spacing: 0.12em;
+      margin-bottom: 0.3rem;
+    }
+
+    .ta-panel-cell-rel {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 0.45rem;
+    }
+
+    .ta-panel-cell-rel.strong {
+      color: var(--ta);
+    }
+
+    .ta-panel-cell-rel.partial {
+      color: var(--muted);
+    }
+
+    .ta-panel-cell-rel.limited {
+      color: var(--faint);
+    }
+
+    .ta-panel-cell-desc {
+      font-size: 0.74rem;
+      color: var(--muted);
+      line-height: 1.4;
     }
 
     /* Responsive */
@@ -1226,7 +1394,14 @@
         grid-template-columns: 1fr;
         gap: 0.35rem;
       }
+
+      .ta-panel-grid {
+        grid-template-columns: 1fr 1fr;
+      }
     }
+  
+    .theme-layer-tag.people { background: rgba(17, 17, 24, 0.06); color: var(--muted); }
+    .theme-layer-tag.value { background: rgba(17, 17, 24, 0.85); color: white; }
   </style>
 </head>
 
@@ -1234,32 +1409,35 @@
 
   <!-- ============ SIDEBAR ============ -->
   <aside class="sidebar">
-    <a href="index.html" style="text-decoration: none;"><div class="sidebar-eyebrow">BACK TO START</div></a>
-    <div class="sidebar-brand">Accelerating Acquisition & Activation</div>
+    <a href="index.html" style="text-decoration: none;">
+      <div class="sidebar-eyebrow">BACK TO START</div>
+    </a>
+    <div class="sidebar-brand">Compounding Growth Loops</div>
     <div class="sidebar-quarter">Q3 2026 · Plan for AMS</div>
 
     <div class="nav-section">
       <div class="nav-label">Strategy</div>
       <nav>
-        <a class="nav-item" href="#thesis"><span class="nav-dot"></span><span class="nav-text">The main
-            message</span></a>
-        <a class="nav-item" href="#structure"><span class="nav-dot"></span><span class="nav-text">The
-            structure</span></a>
+        <a class="nav-item" href="#thesis"><span class="nav-dot"></span><span class="nav-text">The main message</span></a>
+        <a class="nav-item" href="#structure"><span class="nav-dot"></span><span class="nav-text">The structure</span></a>
         <a class="nav-item" href="#mockup"><span class="nav-dot"></span><span class="nav-text">Slide mockup</span></a>
       </nav>
     </div>
 
     <div class="nav-section">
-      <div class="nav-label">The four themes</div>
+      <div class="nav-label">The four loops</div>
       <nav>
-        <a class="nav-item" href="#t1"><span class="nav-dot d1"></span><span class="nav-text">01 · Turn intent into
-            accounts</span></a>
-        <a class="nav-item" href="#t2"><span class="nav-dot d2"></span><span class="nav-text">02 · Land in a
-            company</span></a>
-        <a class="nav-item" href="#t3"><span class="nav-dot d3"></span><span class="nav-text">03 · Activate the
-            TA</span></a>
-        <a class="nav-item" href="#t4"><span class="nav-dot d4"></span><span class="nav-text">04 · Activate
-            Promoted</span></a>
+        <a class="nav-item" href="#t1"><span class="nav-dot d1"></span><span class="nav-text">01 · Recruit the arranger</span></a>
+        <a class="nav-item" href="#t2"><span class="nav-dot d2"></span><span class="nav-text">02 · Grow the team</span></a>
+        <a class="nav-item" href="#t3"><span class="nav-dot d3"></span><span class="nav-text">03 · Widen the basket</span></a>
+        <a class="nav-item" href="#t4"><span class="nav-dot d4"></span><span class="nav-text">04 · Build the booking habit</span></a>
+      </nav>
+    </div>
+
+    <div class="nav-section">
+      <div class="nav-label">Incentives</div>
+      <nav>
+        <a class="nav-item" href="#incentives"><span class="nav-dot"></span><span class="nav-text">Triggers, not loops</span></a>
       </nav>
     </div>
 
@@ -1267,16 +1445,13 @@
       <div class="nav-label">Validation</div>
       <nav>
         <a class="nav-item" href="#featmap"><span class="nav-dot"></span><span class="nav-text">Feature map</span></a>
-        <a class="nav-item" href="#diagnosis"><span class="nav-dot"></span><span class="nav-text">Why this
-            approach</span></a>
-        <a class="nav-item" href="#pushback"><span class="nav-dot"></span><span class="nav-text">Bcom Q&A
-            prep</span></a>
-        <a class="nav-item" href="#deck"><span class="nav-dot"></span><span class="nav-text">Slide flow</span></a>
+        <a class="nav-item" href="#diagnosis"><span class="nav-dot"></span><span class="nav-text">Why this approach</span></a>
+        <a class="nav-item" href="#pushback"><span class="nav-dot"></span><span class="nav-text">Bcom Q&amp;A prep</span></a>
       </nav>
     </div>
 
     <div class="sidebar-footer">
-      DRAFT · SIMPLIFIED VERSION<br>Anna Bondarenko<br>James Scholz
+      DRAFT · SIMPLIFIED VERSION<br>James Scholz<br>Zac Ma
     </div>
   </aside>
 
@@ -1285,12 +1460,12 @@
 
     <!-- HERO -->
     <header class="hero">
-      <div class="hero-eyebrow">Activate · Q3 2026 · Plan for the AMS face-to-face</div>
-      <h1>One sign-up flow.<br><em>Four focus areas.</em></h1>
+      <div class="hero-eyebrow">Growth Loops · Q3 2026 · Plan for the AMS face-to-face</div>
+      <h1>Every user is a<br><em>growth loop.</em></h1>
       <div class="hero-meta">
-        <span>4 themes</span>
-        <span>42 features</span>
-        <span>Foundation + Differentiation</span>
+        <span>4 loops</span>
+        <span>People + Value</span>
+        <span>K-factor spine</span>
       </div>
     </header>
 
@@ -1299,25 +1474,19 @@
       <div class="sec-head">
         <div class="sec-num">01 · Strategy</div>
         <h2 class="sec-title">The main message for Bcom</h2>
-        <p class="sec-subtitle">This is the core idea of the deck. Every theme below supports it. Learn this paragraph
-          by heart.</p>
+        <p class="sec-subtitle">This is the core idea of the deck. Every loop below supports it. Learn this paragraph by heart.</p>
       </div>
 
       <div class="thesis">
         <p class="thesis-quote">
-          By Q3, every B4B user signs up through <strong>one simple flow</strong> that captures their intent and places
-          them in a company. <em>Then we adapt the activation experience</em> for the two user groups where
-          personalisation creates the most value — <strong>Travel Arrangers</strong> (15% of users, 82% of bookings) and
-          <strong>Promoted Users</strong> (already showing business travel intent, 44-day activation window).
+          We already know the levers that move retention. Adding a second user to a company drops churn from <strong>about 60% to about 40%</strong>. A company with five or more bookings churns at <strong>about 25%, against 70% for a single booking</strong>. Today we pull these levers one at a time. <em>Growth Loops wires them together so each one feeds the next.</em> A user recruits the arranger. The arranger grows the team. The team books across more content types. More bookings lower churn and feed the incentive that recruits the next user. The number that tracks this is <strong>K-factor</strong>, the new active users each active user brings in.
         </p>
-        <div class="thesis-source">Taken directly from Slide 5 · "One flow — then differentiation by intent"</div>
+        <div class="thesis-source">Evidence from DSA company analysis 2025 and B4B churn cohorts</div>
       </div>
 
       <div class="excerpt">
-        <div class="excerpt-src">From the AMS deck · Slide 5</div>
-        <div class="excerpt-text">"By Q3, all acquisition runs through the organic flow. Promoted users enter on the
-          same baseline as organic — but their higher CLV and longer activation window (40+ days) make them the priority
-          segment for experience differentiation post-launch, starting with funnel-position-aware onboarding."</div>
+        <div class="excerpt-src">Working definition · Growth loop</div>
+        <div class="excerpt-text">"The test for a loop is simple. A funnel ends when the user reaches the bottom. A loop returns the user to the top as a recruiter, a more frequent booker, or a wider-basket booker, so the next turn starts from a larger base."</div>
       </div>
     </section>
 
@@ -1325,51 +1494,43 @@
     <section id="structure">
       <div class="sec-head">
         <div class="sec-num">02 · The structure</div>
-        <h2 class="sec-title">Two layers, not four equal focus areas</h2>
-        <p class="sec-subtitle">The four themes are not all the same kind of work. Two are foundations that apply to
-          every user. Two are focused on specific user groups where personalisation is worth the investment. Showing
-          this structure on the slide answers the "why these four?" question before anyone asks it.</p>
+        <h2 class="sec-title">Two layers: People loops and Value loops</h2>
+        <p class="sec-subtitle">The four loops do two different jobs. Two add more people to a company, because more users lower churn and raise booking volume. Two add more value per user, because more bookings and more content types make the company stickier. The two layers feed each other.</p>
       </div>
 
       <div class="structure">
         <div class="struct-row-label">
-          <span class="row-tag">Foundation</span>
-          <span class="row-desc">Applies to every user, every channel. Required for all.</span>
+          <span class="row-tag">People loops</span>
+          <span class="row-desc">More users per company. Each new user becomes a way to bring in the next.</span>
         </div>
         <div class="struct-card t1">
           <div class="struct-num">01</div>
-          <div class="struct-title">Remove friction when entering B4B</div>
-          <div class="struct-desc">Every sign of intent — direct traffic, property links, work emails — should become a
-            registered account. We lose around 22,000 registrations per year from direct traffic alone.</div>
+          <div class="struct-title">Recruit the arranger</div>
+          <div class="struct-desc">A solo booker invites the person who really arranges their travel. That arranger then books for them and for others, and each of those others can recruit an arranger too.</div>
         </div>
         <div class="struct-card t2">
           <div class="struct-num">02</div>
-          <div class="struct-title">Land in a company, not an empty account</div>
-          <div class="struct-desc">Setting up company context at sign-up and first login is what makes activation work.
-            Solo accounts rarely activate.</div>
+          <div class="struct-title">Grow the team around the arranger</div>
+          <div class="struct-desc">The arranger adds the people they book for with a name and email. Those travellers connect their own colleagues, and the company gets larger from the inside.</div>
         </div>
 
         <div class="flow-divider">
-          <span class="flow-divider-text">→ then we adapt activation based on the user's intent →</span>
+          <span class="flow-divider-text">&rarr; then each new user gives us more to work with &rarr;</span>
         </div>
 
         <div class="struct-row-label">
-          <span class="row-tag">Differentiation</span>
-          <span class="row-desc">Focused investments for specific user groups where personalisation creates clear
-            value.</span>
+          <span class="row-tag">Value loops</span>
+          <span class="row-desc">More value per user. Each booking creates a reason to come back and book again.</span>
         </div>
         <div class="struct-card t3">
           <div class="struct-num">03</div>
-          <div class="struct-title">Activate the Travel Arranger</div>
-          <div class="struct-desc">The most valuable user type in B4B. 15% of users → 82% of bookings. Activating one TA
-            can activate a whole company.</div>
+          <div class="struct-title">Widen the basket</div>
+          <div class="struct-desc">A user books a hotel, then adds the matching car, taxi, flight, rail, attraction, or meeting room. The trip now sits in one place, so the next trip starts in B4B.</div>
         </div>
         <div class="struct-card t4">
           <div class="struct-num">04</div>
-          <div class="struct-title">Activate the Promoted User on their timeline</div>
-          <div class="struct-desc">These users already show business travel intent and have higher CLV — but they take
-            an average of 44 days to activate, so standard onboarding doesn't work for them. We need an experience that
-            adapts to where they came from in the Bcom funnel.</div>
+          <div class="struct-title">Build the booking habit</div>
+          <div class="struct-desc">The more a company books, the less it churns. We make the next booking easier than the last and prompt it at the right time, so B4B becomes the default.</div>
         </div>
       </div>
     </section>
@@ -1379,34 +1540,31 @@
       <div class="sec-head">
         <div class="sec-num">03 · How it looks as a slide</div>
         <h2 class="sec-title">The one-slide version</h2>
-        <p class="sec-subtitle">A simple example of how this could work as a single overview slide. It would fit between
-          slides 4 and 5 of the AMS deck.</p>
+        <p class="sec-subtitle">A simple example of how this could work as a single overview slide. It sets up the two layers and the four loops before the deep dives.</p>
       </div>
 
       <div class="mockup">
-        <div class="mockup-label">SLIDE MOCKUP · "Activate Q3 Investment Themes"</div>
+        <div class="mockup-label">SLIDE MOCKUP · "Growth Loops Q3 Investment Themes"</div>
         <div class="mockup-slide">
-          <div class="mockup-slide-eyebrow">Investment Themes · Activate · Q3 2026</div>
-          <div class="mockup-slide-title">One flow. <em>Four focus areas.</em></div>
-          <div class="mockup-slide-sub">A single sign-up flow that captures intent and places users in a company — then
-            an adapted activation experience for the two user groups where personalisation is worth the investment.
-          </div>
+          <div class="mockup-slide-eyebrow">Investment Themes · Growth Loops · Q3 2026</div>
+          <div class="mockup-slide-title">Every user is a <em>growth loop.</em></div>
+          <div class="mockup-slide-sub">Two layers of investment. People loops bring more users into a company. Value loops raise the value of each user. K-factor is the number that ties them together.</div>
           <div class="mockup-themes">
             <div class="mockup-theme mt1">
-              <div class="mockup-theme-num">01 · FOUNDATION</div>
-              <div class="mockup-theme-name">Turn intent into accounts</div>
+              <div class="mockup-theme-num">01 · PEOPLE</div>
+              <div class="mockup-theme-name">Recruit the arranger</div>
             </div>
             <div class="mockup-theme mt2">
-              <div class="mockup-theme-num">02 · FOUNDATION</div>
-              <div class="mockup-theme-name">Land in a company, not an empty account</div>
+              <div class="mockup-theme-num">02 · PEOPLE</div>
+              <div class="mockup-theme-name">Grow the team around the arranger</div>
             </div>
             <div class="mockup-theme mt3">
-              <div class="mockup-theme-num">03 · DIFFERENTIATE</div>
-              <div class="mockup-theme-name">Activate the Travel Arranger</div>
+              <div class="mockup-theme-num">03 · VALUE</div>
+              <div class="mockup-theme-name">Widen the basket</div>
             </div>
             <div class="mockup-theme mt4">
-              <div class="mockup-theme-num">04 · DIFFERENTIATE</div>
-              <div class="mockup-theme-name">Activate the Promoted User</div>
+              <div class="mockup-theme-num">04 · VALUE</div>
+              <div class="mockup-theme-name">Build the booking habit</div>
             </div>
           </div>
         </div>
@@ -1421,50 +1579,45 @@
         <div class="theme-deep-head">
           <div class="theme-top-line">
             <span class="theme-big-num">01</span>
-            <span class="theme-layer-tag foundation">Foundation · For all users</span>
+            <span class="theme-layer-tag people">People loop · More users</span>
           </div>
-          <h3 class="theme-deep-title">Turn intent into accounts</h3>
-          <p class="theme-bet">Every sign of intent — direct traffic, property-link clicks, Bcom users with work emails
-            — should end in a registered account. Today, many don't.</p>
+          <h3 class="theme-deep-title">Recruit the arranger</h3>
+          <p class="theme-bet">A solo booker names the person who really arranges their travel and sends a soft invite. That arranger then books for them and for others. Each of those others can name their own arranger, so the loop keeps producing new arrangers.</p>
           <div class="theme-stats">
-            <span class="stat-pill">~22k lost registrations / yr</span>
-            <span class="stat-pill">22% vs 53% conversion gap</span>
-            <span class="stat-pill">9.5k direct vs 5k marketing weekly</span>
+            <span class="stat-pill">Solo company churn ~60%</span>
+            <span class="stat-pill">Arrangers: 15% of users, 82% of bookings</span>
+            <span class="stat-pill">Arrangers activate at 30% vs 11% solo</span>
           </div>
         </div>
         <div class="theme-deep-body">
           <div class="theme-body-grid">
             <div>
               <div class="theme-block-label">Why this matters</div>
-              <p class="theme-why">Direct traffic is now 2x larger than marketing-site traffic — but it converts at less
-                than half the rate. Most of these users arrive via property links from Bcom. They land on a generic
-                registration form with no context for why they are there. The form asks them to commit before they have
-                seen anything.</p>
+              <p class="theme-why">The solo booker is our lowest-value user. They book for themselves, churn at about 60%, and rarely see the company-level value. But many of them are not the person who actually arranges the travel. Their EA, team admin, or manager's PA does. When we ask the solo booker to name that person and send a soft invite, we move the account to our highest-value user in one step.</p>
+              <p class="theme-why" style="margin-top: 0.75rem;">The loop closes because the recruited arranger then adds the people they book for, and each of those travellers can name their own arranger. One low-value account becomes a source of new arrangers.</p>
             </div>
             <div>
               <div class="theme-block-label">Top features by ICE</div>
               <ul class="theme-feats">
-                <li><span class="feat-ice high">133</span>Move Goals page from registration to dashboard</li>
-                <li><span class="feat-ice high">133</span>Personalised dashboard for first-time users</li>
-                <li><span class="feat-ice high">100</span>One-step "mini" registration form for deep-link users</li>
-                <li><span class="feat-ice">40</span>Support European characters in sign-up</li>
-                <li><span class="feat-ice">30</span>Let anonymous users preview a sanitised Property page</li>
-                <li><span class="feat-ice">27</span>Registration journey from "Link to property"</li>
+                <li><span class="feat-ice high">90</span><span class="feat-name">Encourage solo bookers to invite their arranger</span></li>
+                <li><span class="feat-ice mid">45</span><span class="feat-name">Team Trips</span></li>
+                <li><span class="feat-ice">36</span><span class="feat-name">Company Preferred &amp; Peer Endorsement</span></li>
+                <li><span class="feat-ice">&mdash;</span><span class="feat-name">Create profile without inviting (arranger-driven) <span class="commit-flag">CROSS-LISTED</span></span></li>
               </ul>
             </div>
           </div>
           <div class="theme-meta">
             <div class="theme-meta-item">
               <span class="theme-meta-label">Main metric</span>
-              <span class="theme-meta-val">Registration conversion (direct traffic)</span>
+              <span class="theme-meta-val">Arrangers recruited per 100 solo accounts</span>
             </div>
             <div class="theme-meta-item">
               <span class="theme-meta-label">Primary persona</span>
-              <span class="theme-meta-val">All new users · Prospective companies</span>
+              <span class="theme-meta-val">Self-booker · Travel Arranger</span>
             </div>
             <div class="theme-meta-item">
-              <span class="theme-meta-label">Connects to</span>
-              <span class="theme-meta-val">Theme 04 (deep-links feed Promoted)</span>
+              <span class="theme-meta-label">Anchor work</span>
+              <span class="theme-meta-val">Activate TA theme · Team Management R5</span>
             </div>
           </div>
         </div>
@@ -1477,55 +1630,45 @@
         <div class="theme-deep-head">
           <div class="theme-top-line">
             <span class="theme-big-num">02</span>
-            <span class="theme-layer-tag foundation">Foundation · For all users</span>
+            <span class="theme-layer-tag people">People loop · More users</span>
           </div>
-          <h3 class="theme-deep-title">Land in a company,<br>not an empty account</h3>
-          <p class="theme-bet">Setting up company context at sign-up and first login is what makes activation work. Solo
-            accounts rarely activate — the user never sees B4B's company-level value.</p>
+          <h3 class="theme-deep-title">Grow the team around the arranger</h3>
+          <p class="theme-bet">The arranger adds the people they book for with a name and email. Those travellers get booked for straight away. When they see colleagues already on B4B, they connect, and the company gets larger.</p>
           <div class="theme-stats">
-            <span class="stat-pill">40% → ~70% JEC coverage target</span>
-            <span class="stat-pill">Multi-user = higher retention</span>
-            <span class="stat-pill">SSO v3 deadline Jun 2026</span>
+            <span class="stat-pill">1 to 2 users: churn 60% to 40%</span>
+            <span class="stat-pill">Each profile = ~4 to 8 bookings</span>
+            <span class="stat-pill">83% of companies have guest travellers</span>
           </div>
         </div>
         <div class="theme-deep-body">
           <div class="theme-body-grid">
             <div>
               <div class="theme-block-label">Why this matters</div>
-              <p class="theme-why">B4B's value is at the company level — policy, teams, Travel Arrangers, reporting. A
-                user who lands in a solo account on day one will never see this value. JEC features, smart matching, and
-                a first-login experience that confirms company context are what enable everything else.</p>
-              <p class="theme-why" style="margin-top: 0.75rem;">This is also the area with the most committed roadmap
-                work (Smart Matching, AID persistence, SSO v3) — the framing turns essential engineering work into a
-                strategic theme.</p>
+              <p class="theme-why">The arranger is the engine for team growth. They add travellers with a name and an email, and we send a soft invite so booking can start before the traveller accepts. Each added traveller gives the arranger another reason to book on B4B. Some of those travellers already have colleagues sitting on separate B4B accounts. A prompt to connect brings those accounts into one company.</p>
+              <p class="theme-why" style="margin-top: 0.75rem;">The loop closes because every member added is another node that can pull in the next colleague. The company keeps growing from inside, without us paying to acquire each new person.</p>
             </div>
             <div>
               <div class="theme-block-label">Top features by ICE</div>
               <ul class="theme-feats">
-                <li><span class="feat-ice high">90</span>Admins share a company invite link</li>
-                <li><span class="feat-ice high">90</span>Show JEC admin name during signup</li>
-                <li><span class="feat-ice high">80</span>Prompt provisional users to join company at signup <span
-                    class="commit-flag">BACKLOG</span></li>
-                <li><span class="feat-ice mid">64</span>Self-serve SSO / Active Directory</li>
-                <li><span class="feat-ice mid">60</span>Traveller / Joiner dashboard with company context</li>
-                <li><span class="feat-ice mid">60</span>Automated admin reminder emails for pending joiners</li>
-                <li><span class="feat-ice">—</span>JEC Smart Matching · JEC AID persistence · SSO v3 <span
-                    class="commit-flag">COMMITTED</span></li>
+                <li><span class="feat-ice">30</span><span class="feat-name">Add guests to team at checkout (R5) <span class="commit-flag">CROSS-LISTED</span></span></li>
+                <li><span class="feat-ice">30</span><span class="feat-name">Convert guests to travel profiles (R5) <span class="commit-flag">CROSS-LISTED</span></span></li>
+                <li><span class="feat-ice">20</span><span class="feat-name">Share Trip to others post-booking</span></li>
+                <li><span class="feat-ice">16</span><span class="feat-name">Sharing itineraries during shopping</span></li>
               </ul>
             </div>
           </div>
           <div class="theme-meta">
             <div class="theme-meta-item">
               <span class="theme-meta-label">Main metric</span>
-              <span class="theme-meta-val">% new users in a company by day 1 · Joiner activation rate</span>
+              <span class="theme-meta-val">Members added per active arranger per month</span>
             </div>
             <div class="theme-meta-item">
               <span class="theme-meta-label">Primary persona</span>
-              <span class="theme-meta-val">Company Administrator · New Joiner / Traveller</span>
+              <span class="theme-meta-val">Travel Arranger · Traveller · Company Admin</span>
             </div>
             <div class="theme-meta-item">
-              <span class="theme-meta-label">Slide reference</span>
-              <span class="theme-meta-val">Slide 7 sits here</span>
+              <span class="theme-meta-label">Anchor work</span>
+              <span class="theme-meta-val">Team Management Release 5</span>
             </div>
           </div>
         </div>
@@ -1538,53 +1681,49 @@
         <div class="theme-deep-head">
           <div class="theme-top-line">
             <span class="theme-big-num">03</span>
-            <span class="theme-layer-tag differentiation">Differentiation · Specific user group</span>
+            <span class="theme-layer-tag value">Value loop · More per user</span>
           </div>
-          <h3 class="theme-deep-title">Activate the<br>Travel Arranger</h3>
-          <p class="theme-bet">The activation focus with the biggest impact in B4B. Activating one TA can activate a
-            whole company. This is also the starting point for our wider Travel Arranger platform investment.</p>
+          <h3 class="theme-deep-title">Widen the basket</h3>
+          <p class="theme-bet">A user books a hotel. We offer the matching car, taxi, flight, rail, attraction, or meeting room for the same trip. Once a trip holds more than one content type, B4B becomes the place the user starts the next trip.</p>
           <div class="theme-stats">
-            <span class="stat-pill">15% of users · 82% of bookings</span>
-            <span class="stat-pill">30% vs 11% activation rate</span>
-            <span class="stat-pill">12 bookings/day from checklist experiment</span>
+            <span class="stat-pill">Hotels today, six content types soon</span>
+            <span class="stat-pill">Punch-outs: taxi, car, attractions, meeting rooms</span>
+            <span class="stat-pill">Flights and rail in build</span>
           </div>
         </div>
         <div class="theme-deep-body">
           <div class="theme-body-grid">
             <div>
               <div class="theme-block-label">Why this matters</div>
-              <p class="theme-why">Travel Arrangers have outsized impact — they don't just book for themselves, they
-                organise booking for everyone else. They have different needs at first run (team setup, policy,
-                oversight) and a different idea of what "success" looks like (managing a trip for someone else, not
-                booking their own). Treating them as a separate activation group is the single best return on investment
-                we can make.</p>
-              <p class="theme-why" style="margin-top: 0.75rem;">Solo bookers are not a lost cause — they can recruit
-                Travel Arrangers. When a solo user invites their TA, we turn our lowest-value user into our
-                highest-value one.</p>
+              <p class="theme-why">Most companies book only hotels on B4B. Each extra content type is a new reason to come back. When a booking user, a self-booker or an arranger, adds a car or a flight to a hotel trip, the whole trip sits in one place in B4B. A consolidated itinerary then becomes the obvious place to start the next trip, because the last one is already there.</p>
+              <p class="theme-why" style="margin-top: 0.75rem;">The loop closes because each content type added raises the cost of booking the trip anywhere else. The next trip is more likely to start in B4B, and it picks up more content types again.</p>
             </div>
             <div>
               <div class="theme-block-label">Top features by ICE</div>
               <ul class="theme-feats">
-                <li><span class="feat-ice high">90</span>Encourage solo bookers to invite their travel arranger</li>
-                <li><span class="feat-ice mid">60</span>Experiments with personalised onboarding for TAs</li>
-                <li><span class="feat-ice mid">60</span>First-booking engagement experiments</li>
-                <li><span class="feat-ice">—</span>TA role detection at signup (concept)</li>
-                <li><span class="feat-ice">—</span>Arranger-specific empty states (concept)</li>
+                <li><span class="feat-ice high">80</span><span class="feat-name">Flights: Flight Details</span></li>
+                <li><span class="feat-ice mid">60</span><span class="feat-name">Car shop to B4B wallet for payment</span></li>
+                <li><span class="feat-ice mid">53</span><span class="feat-name">Rail search widget</span></li>
+                <li><span class="feat-ice mid">45</span><span class="feat-name">Flights: Branded Fares</span></li>
+                <li><span class="feat-ice">36</span><span class="feat-name">Consolidated trip itinerary &amp; smart upsell</span></li>
+                <li><span class="feat-ice">20</span><span class="feat-name">Book a connected trip in a single itinerary</span></li>
+                <li><span class="feat-ice">0</span><span class="feat-name">Taxis, attractions, meeting rooms punch-outs</span></li>
+                <li><span class="feat-ice">0</span><span class="feat-name">Post-booking cross-sell</span></li>
               </ul>
             </div>
           </div>
           <div class="theme-meta">
             <div class="theme-meta-item">
               <span class="theme-meta-label">Main metric</span>
-              <span class="theme-meta-val">TA activation rate · Bookings per activated TA</span>
+              <span class="theme-meta-val">Content types booked per company</span>
             </div>
             <div class="theme-meta-item">
               <span class="theme-meta-label">Primary persona</span>
-              <span class="theme-meta-val">Travel Arranger · Company Administrator</span>
+              <span class="theme-meta-val">Self-booker · Travel Arranger</span>
             </div>
             <div class="theme-meta-item">
-              <span class="theme-meta-label">Strategic note</span>
-              <span class="theme-meta-val">Starting point for wider TA platform investment</span>
+              <span class="theme-meta-label">Anchor work</span>
+              <span class="theme-meta-val">Trip Management · Adjacent Supply</span>
             </div>
           </div>
         </div>
@@ -1597,188 +1736,163 @@
         <div class="theme-deep-head">
           <div class="theme-top-line">
             <span class="theme-big-num">04</span>
-            <span class="theme-layer-tag differentiation">Differentiation · Specific user group</span>
+            <span class="theme-layer-tag value">Value loop · More per user</span>
           </div>
-          <h3 class="theme-deep-title">Activate the Promoted User<br>on their timeline</h3>
-          <p class="theme-bet">Promoted users already show business travel intent and have higher CLV — but their
-            average activation takes 44 days, so standard onboarding doesn't work for them. We measure them too early
-            and act at the wrong time.</p>
+          <h3 class="theme-deep-title">Build the booking habit</h3>
+          <p class="theme-bet">The more a company books, the less it churns. We make the next booking easier than the last and prompt it at the right time. Booking on B4B becomes the default, and frequency feeds the other three loops.</p>
           <div class="theme-stats">
-            <span class="stat-pill">44-day avg activation window</span>
-            <span class="stat-pill">Already showing business intent</span>
-            <span class="stat-pill">Funnel-position signals at sign-up</span>
+            <span class="stat-pill">1 booking company: ~70% churn</span>
+            <span class="stat-pill">5+ booking company: ~25% churn</span>
+            <span class="stat-pill">Frequency fuels the other loops</span>
           </div>
         </div>
         <div class="theme-deep-body">
           <div class="theme-body-grid">
             <div>
               <div class="theme-block-label">Why this matters</div>
-              <p class="theme-why">Promoted Users are not all the same. A user reached at the top of the Bcom funnel
-                (email, in-product prompt) is still exploring — they need to understand why B4B is worth switching to. A
-                user reached at checkout confirmation has just completed a business booking and is ready to act now.
-                Same flow, different intent — the experience should reflect that.</p>
-              <p class="theme-why" style="margin-top: 0.75rem;">This is the area where the Bcom partnership matters most
-                directly. We already know the acquisition channel at sign-up — we just don't use it.</p>
+              <p class="theme-why">Churn falls fast as booking count rises. A one-booking company churns at about 70%. A company with five or more bookings churns at about 25%. When we learn a user's travel pattern, we can prompt the next trip before they go elsewhere. Repeat and draft bookings cut the effort of booking again.</p>
+              <p class="theme-why" style="margin-top: 0.75rem;">The loop closes because each booking lowers the effort and raises the reward of the next, since frequency moves the company up the Genius tiers. Frequency is also the fuel for the other loops. A more frequent arranger adds more travellers and books more content types.</p>
             </div>
             <div>
               <div class="theme-block-label">Top features by ICE</div>
               <ul class="theme-feats">
-                <li><span class="feat-ice mid">40</span>Personalised onboarding + setup for Promoted Users</li>
-                <li><span class="feat-ice mid">40</span>Personalised welcome email for Promoted users</li>
-                <li><span class="feat-ice">32</span>Promoted users straight into search as HVC</li>
-                <li><span class="feat-ice">32</span>Bcom users with work emails search before sign-up</li>
-                <li><span class="feat-ice">20</span>Multi-email onboarding campaign</li>
-                <li><span class="feat-ice">—</span>Funnel-position-aware first-run UX</li>
+                <li><span class="feat-ice mid">60</span><span class="feat-name">Bleisure extension &amp; duration nudges</span></li>
+                <li><span class="feat-ice mid">45</span><span class="feat-name">Curated booking experience</span></li>
+                <li><span class="feat-ice mid">45</span><span class="feat-name">Draft bookings</span></li>
+                <li><span class="feat-ice">36</span><span class="feat-name">Repeat bookings</span></li>
+                <li><span class="feat-ice">36</span><span class="feat-name">Predictive re-engagement &amp; pattern-based itineraries</span></li>
+                <li><span class="feat-ice">0</span><span class="feat-name">Trip notifications</span></li>
               </ul>
             </div>
           </div>
           <div class="theme-meta">
             <div class="theme-meta-item">
               <span class="theme-meta-label">Main metric</span>
-              <span class="theme-meta-val">44-day activation rate · Promoted vs organic ratio</span>
+              <span class="theme-meta-val">Bookings per company per month</span>
             </div>
             <div class="theme-meta-item">
               <span class="theme-meta-label">Primary persona</span>
-              <span class="theme-meta-val">Company Administrator (Promoted channel)</span>
+              <span class="theme-meta-val">Self-booker · Travel Arranger</span>
             </div>
             <div class="theme-meta-item">
-              <span class="theme-meta-label">Slide reference</span>
-              <span class="theme-meta-val">Slide 6 sits here</span>
+              <span class="theme-meta-label">Anchor work</span>
+              <span class="theme-meta-val">Trip Management</span>
             </div>
           </div>
         </div>
       </article>
     </section>
 
+    <!-- ============ INCENTIVE TRIGGERS PANEL ============ -->
+    <section id="incentives">
+      <div class="sec-head">
+        <div class="sec-num">05 · Incentives</div>
+        <h2 class="sec-title">Incentives trigger the loops. They are not a loop.</h2>
+        <p class="sec-subtitle">Genius tiers and team rewards are not part of Growth Loops. But they give a user a concrete reason to take the loop action now. The dual-path Genius card sets two ways to reach Level 3, one through team size and one through booking frequency. A prompt that colleagues are already on B4B turns connecting them into a way to climb a tier. This panel shows where each incentive plugs in.</p>
+      </div>
+
+      <div class="ta-panel">
+        <div class="ta-panel-head">
+          <span class="ta-panel-tag">Trigger</span>
+          <span class="ta-panel-title">By loop</span>
+        </div>
+        <div class="ta-panel-grid">
+          <div class="ta-panel-cell t1">
+            <div class="ta-panel-cell-num">01 · Recruit the arranger</div>
+            <div class="ta-panel-cell-rel strong">Strong</div>
+            <div class="ta-panel-cell-desc">"Connect and climb to Level 3 together" gives the solo booker a reason to bring in the arranger and the colleagues now, not later.</div>
+          </div>
+          <div class="ta-panel-cell t2">
+            <div class="ta-panel-cell-num">02 · Grow the team</div>
+            <div class="ta-panel-cell-rel strong">Strong</div>
+            <div class="ta-panel-cell-desc">The team path on the dual-path card, "bring 5 teammates on board", makes adding members a direct route to a higher Genius tier for everyone.</div>
+          </div>
+          <div class="ta-panel-cell t3">
+            <div class="ta-panel-cell-rel partial">Partial</div>
+            <div class="ta-panel-cell-desc">Genius rates apply across content types. A better rate on the car or the flight is one more reason to book the whole trip on B4B.</div>
+          </div>
+          <div class="ta-panel-cell t4">
+            <div class="ta-panel-cell-num">04 · Build the habit</div>
+            <div class="ta-panel-cell-rel strong">Strong</div>
+            <div class="ta-panel-cell-desc">The solo path, "book 15 business trips in 2 years", rewards frequency directly. Each booking moves the company toward the next tier.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ============ FEATURE MAP ============ -->
     <section id="featmap">
       <div class="sec-head">
-        <div class="sec-num">04 · Validation</div>
-        <h2 class="sec-title">All 42 features fit clearly into the four themes</h2>
-        <p class="sec-subtitle">Sorted by ICE score within each column. No feature is left out — every one finds a home.
-          Grey items are already committed or in the backlog; the rest are options we are prioritising.</p>
+        <div class="sec-num">06 · Validation</div>
+        <h2 class="sec-title">The features that build each loop</h2>
+        <p class="sec-subtitle">Pulled from the trip management and adjacent supply feature list, sorted by ICE within each column. This is a selection of clear fits, not the full list. A few items are cross-listed from the Activate and Company Management sections, where the same feature acts as a loop step here.</p>
       </div>
 
       <div class="legend">
-        <div class="legend-item"><span class="legend-swatch" style="background:rgba(14,168,152,0.4);"></span>ICE ≥ 80
-        </div>
-        <div class="legend-item"><span class="legend-swatch" style="background:rgba(217,119,6,0.35);"></span>ICE 40–79
-        </div>
-        <div class="legend-item"><span class="legend-swatch" style="background:var(--bg-soft);"></span>ICE &lt; 40 or
-          unscored</div>
-        <div class="legend-item"><span class="legend-swatch" style="background:rgba(17,17,24,0.85);"></span>Committed /
-          Backlog</div>
+        <div class="legend-item"><span class="legend-swatch" style="background:rgba(14,168,152,0.4);"></span>ICE &ge; 80</div>
+        <div class="legend-item"><span class="legend-swatch" style="background:rgba(217,119,6,0.35);"></span>ICE 40 to 79</div>
+        <div class="legend-item"><span class="legend-swatch" style="background:var(--bg-soft);"></span>ICE &lt; 40 or unscored</div>
+        <div class="legend-item"><span class="legend-swatch" style="background:rgba(17,17,24,0.85);"></span>Cross-listed</div>
       </div>
 
       <div class="featmap">
         <div class="featmap-col">
           <div class="featmap-col-head">
             <span class="featmap-dot t1"></span>
-            <span class="featmap-col-title">01 · Turn intent into accounts</span>
-            <span class="featmap-count">11 items</span>
+            <span class="featmap-col-title">01 · Recruit arranger</span>
+            <span class="featmap-count">4 items</span>
           </div>
-          <div class="featmap-item"><span class="feat-ice high">133</span><span class="feat-name">Move Goals page from
-              registration to dashboard</span></div>
-          <div class="featmap-item"><span class="feat-ice high">133</span><span class="feat-name">Personalised dashboard
-              for first-time users</span></div>
-          <div class="featmap-item"><span class="feat-ice high">100</span><span class="feat-name">One-step mini
-              registration for deep-link users</span></div>
-          <div class="featmap-item"><span class="feat-ice mid">40</span><span class="feat-name">Support European
-              characters in signup</span></div>
-          <div class="featmap-item"><span class="feat-ice">30</span><span class="feat-name">Anonymous Property page
-              preview</span></div>
-          <div class="featmap-item"><span class="feat-ice">27</span><span class="feat-name">Registration journey from
-              Link-to-property</span></div>
-          <div class="featmap-item"><span class="feat-ice">24</span><span class="feat-name">Multi-byte character support
-              in DBs</span></div>
-          <div class="featmap-item"><span class="feat-ice">0</span><span class="feat-name">Country/Currency at
-              sign-in</span></div>
-          <div class="featmap-item"><span class="feat-ice">0</span><span class="feat-name">Marketing opt-in by
-              country</span></div>
-          <div class="featmap-item"><span class="feat-ice">0</span><span class="feat-name">Restrict regions for
-              sign-up</span></div>
-          <div class="featmap-item"><span class="feat-ice">0</span><span class="feat-name">Start registration after step
-              1 filled</span></div>
+          <div class="featmap-item"><span class="feat-ice high">90</span><span class="feat-name">Encourage solo bookers to invite their arranger</span></div>
+          <div class="featmap-item"><span class="feat-ice mid">45</span><span class="feat-name">Team Trips</span></div>
+          <div class="featmap-item"><span class="feat-ice">36</span><span class="feat-name">Company Preferred &amp; Peer Endorsement</span></div>
+          <div class="featmap-item committed"><span class="feat-ice">&mdash;</span><span class="feat-name">Create profile without inviting (arranger-driven)</span></div>
         </div>
 
         <div class="featmap-col">
           <div class="featmap-col-head">
             <span class="featmap-dot t2"></span>
-            <span class="featmap-col-title">02 · Land in company</span>
-            <span class="featmap-count">15 items</span>
+            <span class="featmap-col-title">02 · Grow the team</span>
+            <span class="featmap-count">4 items</span>
           </div>
-          <div class="featmap-item"><span class="feat-ice high">90</span><span class="feat-name">Admin shareable invite
-              link</span></div>
-          <div class="featmap-item"><span class="feat-ice high">90</span><span class="feat-name">Show JEC admin name
-              during signup</span></div>
-          <div class="featmap-item"><span class="feat-ice high">80</span><span class="feat-name">Prompt provisional
-              users to join company</span></div>
-          <div class="featmap-item"><span class="feat-ice mid">64</span><span class="feat-name">Self-serve SSO / AD
-              integration</span></div>
-          <div class="featmap-item"><span class="feat-ice mid">60</span><span class="feat-name">Provide company logos to
-              Bcom</span></div>
-          <div class="featmap-item"><span class="feat-ice mid">60</span><span class="feat-name">Automated admin
-              reminders for pending joiners</span></div>
-          <div class="featmap-item"><span class="feat-ice mid">60</span><span class="feat-name">Welcome banner
-              streamline by user type</span></div>
-          <div class="featmap-item"><span class="feat-ice mid">60</span><span class="feat-name">Traveller/Joiner
-              dashboard with company context</span></div>
-          <div class="featmap-item"><span class="feat-ice mid">60</span><span class="feat-name">Personalised welcome
-              email for joiners</span></div>
-          <div class="featmap-item"><span class="feat-ice mid">40</span><span class="feat-name">Request specific role at
-              sign-up</span></div>
-          <div class="featmap-item"><span class="feat-ice">30</span><span class="feat-name">Support multiple company
-              domains for JEC</span></div>
-          <div class="featmap-item"><span class="feat-ice">20</span><span class="feat-name">Allow merge of duplicate
-              companies</span></div>
-          <div class="featmap-item"><span class="feat-ice">20</span><span class="feat-name">Awaiting-approval status
-              visibility</span></div>
-          <div class="featmap-item committed"><span class="feat-ice">—</span><span class="feat-name">JEC Smart Matching
-              · JEC AID persistence · JEC Onboarding UI · SSO v3 · Onboarding for joined travellers · BAU Claimed
-              users</span></div>
+          <div class="featmap-item"><span class="feat-ice">30</span><span class="feat-name">Share Trip to others post-booking</span></div>
+          <div class="featmap-item"><span class="feat-ice">16</span><span class="feat-name">Sharing itineraries during shopping</span></div>
+          <div class="featmap-item committed"><span class="feat-ice">&mdash;</span><span class="feat-name">Add guests to team at checkout (R5)</span></div>
+          <div class="featmap-item committed"><span class="feat-ice">&mdash;</span><span class="feat-name">Convert guests to travel profiles (R5)</span></div>
         </div>
 
         <div class="featmap-col">
           <div class="featmap-col-head">
             <span class="featmap-dot t3"></span>
-            <span class="featmap-col-title">03 · Activate TA</span>
-            <span class="featmap-count">3 items</span>
+            <span class="featmap-col-title">03 · Widen the basket</span>
+            <span class="featmap-count">10 items</span>
           </div>
-          <div class="featmap-item"><span class="feat-ice high">90</span><span class="feat-name">Encourage solo bookers
-              to invite TA <em style="color:var(--faint); font-size:0.65rem;">(also T2)</em></span></div>
-          <div class="featmap-item"><span class="feat-ice mid">60</span><span class="feat-name">Experiments with
-              personalised onboarding for TAs</span></div>
-          <div class="featmap-item"><span class="feat-ice mid">60</span><span class="feat-name">First-booking engagement
-              experiments</span></div>
-          <div class="featmap-item"><span class="feat-ice">0</span><span class="feat-name">Highlight missed Genius
-              savings (recruit colleagues)</span></div>
-          <div
-            style="padding: 0.6rem 0; font-size: 0.7rem; color: var(--faint); font-style: italic; line-height: 1.45;">
-            This column is small on purpose — TA work is still mostly conceptual today, not yet built into the product.
-            It is also the starting point for our wider TA platform investment.
-          </div>
+          <div class="featmap-item"><span class="feat-ice high">80</span><span class="feat-name">Flights: Flight Details</span></div>
+          <div class="featmap-item"><span class="feat-ice mid">60</span><span class="feat-name">Car shop to B4B wallet for payment</span></div>
+          <div class="featmap-item"><span class="feat-ice mid">53</span><span class="feat-name">Rail search widget</span></div>
+          <div class="featmap-item"><span class="feat-ice mid">45</span><span class="feat-name">Flights: Branded Fares</span></div>
+          <div class="featmap-item"><span class="feat-ice">36</span><span class="feat-name">Consolidated trip itinerary &amp; smart upsell</span></div>
+          <div class="featmap-item"><span class="feat-ice">20</span><span class="feat-name">Book a connected trip in a single itinerary</span></div>
+          <div class="featmap-item"><span class="feat-ice">0</span><span class="feat-name">Taxis punch-out</span></div>
+          <div class="featmap-item"><span class="feat-ice">0</span><span class="feat-name">Attractions punch-out</span></div>
+          <div class="featmap-item"><span class="feat-ice">0</span><span class="feat-name">Meeting rooms punch-out</span></div>
+          <div class="featmap-item"><span class="feat-ice">0</span><span class="feat-name">Post-booking cross-sell</span></div>
         </div>
 
         <div class="featmap-col">
           <div class="featmap-col-head">
             <span class="featmap-dot t4"></span>
-            <span class="featmap-col-title">04 · Activate Promoted</span>
-            <span class="featmap-count">7 items</span>
+            <span class="featmap-col-title">04 · Booking habit</span>
+            <span class="featmap-count">6 items</span>
           </div>
-          <div class="featmap-item"><span class="feat-ice mid">40</span><span class="feat-name">Personalised onboarding
-              + setup for Promoted Users</span></div>
-          <div class="featmap-item"><span class="feat-ice mid">40</span><span class="feat-name">Personalised welcome
-              email for Promoted users</span></div>
-          <div class="featmap-item"><span class="feat-ice">32</span><span class="feat-name">Promoted users straight into
-              HVC search</span></div>
-          <div class="featmap-item"><span class="feat-ice">32</span><span class="feat-name">Bcom users with work emails
-              search before sign-up</span></div>
-          <div class="featmap-item"><span class="feat-ice">20</span><span class="feat-name">Multi-email onboarding
-              campaign</span></div>
-          <div class="featmap-item"><span class="feat-ice">0</span><span class="feat-name">Personalised onboarding for
-              promoted companies (name vs "Administrator")</span></div>
-          <div class="featmap-item"><span class="feat-ice">—</span><span class="feat-name">Funnel-position-aware
-              first-run UX (concept)</span></div>
+          <div class="featmap-item"><span class="feat-ice mid">60</span><span class="feat-name">Bleisure extension &amp; duration nudges</span></div>
+          <div class="featmap-item"><span class="feat-ice mid">45</span><span class="feat-name">Curated booking experience</span></div>
+          <div class="featmap-item"><span class="feat-ice mid">45</span><span class="feat-name">Draft bookings</span></div>
+          <div class="featmap-item"><span class="feat-ice">36</span><span class="feat-name">Repeat bookings</span></div>
+          <div class="featmap-item"><span class="feat-ice">36</span><span class="feat-name">Predictive re-engagement &amp; pattern itineraries</span></div>
+          <div class="featmap-item"><span class="feat-ice">0</span><span class="feat-name">Trip notifications</span></div>
+          <div style="padding: 0.6rem 0; font-size: 0.7rem; color: var(--faint); font-style: italic; line-height: 1.45;">
+            Frequency is the fuel for the other three loops, so this column compounds with the rest.
+          </div>
         </div>
       </div>
     </section>
@@ -1786,10 +1900,9 @@
     <!-- ============ DIAGNOSIS ============ -->
     <section id="diagnosis">
       <div class="sec-head">
-        <div class="sec-num">05 · Why this approach</div>
+        <div class="sec-num">07 · Why this approach</div>
         <h2 class="sec-title">Compared to the other options we considered</h2>
-        <p class="sec-subtitle">A direct look at what each option does well, what it does not, and why this
-          recommendation wins. Useful for explaining to internal stakeholders why we chose this approach.</p>
+        <p class="sec-subtitle">A direct look at what each option does well, what it does not, and why the recommendation wins.</p>
       </div>
 
       <div class="diag">
@@ -1800,46 +1913,27 @@
         </div>
 
         <div class="diag-row">
-          <div class="diag-name">Your 4-axis framework<br><span
-              style="font-family:var(--font-mono); font-size:0.65rem; font-weight:400; color:var(--faint);">intent ·
-              entry · friction · JEC</span></div>
-          <div class="diag-cell good">A clean, well-organised map of the funnel. Shows every dimension the team needs to
-            manage.</div>
-          <div class="diag-cell">It focuses on how things work, not where we are investing. <strong>Reads like a list of
-              features.</strong> The word "friction" sounds defensive and reactive, not strategic. Bcom wants to know
-            where we are investing, not how our funnel is structured.</div>
+          <div class="diag-name">One Growth theme<br><span style="font-family:var(--font-mono); font-size:0.65rem; font-weight:400; color:var(--faint);">all loops in one box</span></div>
+          <div class="diag-cell good">Simplest to present. One headline, one story.</div>
+          <div class="diag-cell">It hides the two engines that actually drive growth. More users and more value per user are different jobs with different metrics. A single box reads as a grab-bag of nudges, and there is no way to show that the parts <strong>feed each other</strong>.</div>
         </div>
 
         <div class="diag-row">
-          <div class="diag-name">Idea 1<br><span
-              style="font-family:var(--font-mono); font-size:0.65rem; font-weight:400; color:var(--faint);">your
-              existing HTML draft</span></div>
-          <div class="diag-cell good">The strongest story of the three. T1 and T2 connect well to the slide 5 message.
-            The names are clear.</div>
-          <div class="diag-cell"><strong>Axis confusion:</strong> T3 is a persona (TA), T4 is a channel (Promoted). Bcom
-            will ask "where is the self-booker theme? Where is the organic theme?" — and we won't have a good answer. It
-            is missing the layer structure that explains why <em>these four</em> specifically.</div>
+          <div class="diag-name">Organise by actor<br><span style="font-family:var(--font-mono); font-size:0.65rem; font-weight:400; color:var(--faint);">self-booker / arranger / company</span></div>
+          <div class="diag-cell good">Maps cleanly to the personas we already talk about.</div>
+          <div class="diag-cell">It overlaps the Activate and Company Management sections, which are already cut by persona and company stage. It mixes who takes the action with what the action does, and it gives no single number to track the whole story.</div>
         </div>
 
         <div class="diag-row">
-          <div class="diag-name">Idea 2<br><span
-              style="font-family:var(--font-mono); font-size:0.65rem; font-weight:400; color:var(--faint);">the 6-theme
-              version</span></div>
-          <div class="diag-cell good">Covers the most features. Names each problem clearly.</div>
-          <div class="diag-cell"><strong>Six themes is too many</strong> for a face-to-face meeting deck — the audience
-            will not see it as a clear set of focus areas. T3 (join friction) and T4 (solo → multi-user) are the same
-            problem. T5 (first login as team) is a feature, not a theme.</div>
+          <div class="diag-name">Funnel stages<br><span style="font-family:var(--font-mono); font-size:0.65rem; font-weight:400; color:var(--faint);">acquire / activate / retain / refer</span></div>
+          <div class="diag-cell good">A familiar shape that most stakeholders recognise.</div>
+          <div class="diag-cell">Acquire and activate are already owned by the Activate section, so this repeats it. A stage model shows a one-way path. It does not show that a retained, high-frequency user becomes a recruiter again, which is the <strong>whole point</strong> of a loop.</div>
         </div>
 
         <div class="diag-row recommended">
-          <div class="diag-name">Recommendation<br><span
-              style="font-family:var(--font-mono); font-size:0.65rem; font-weight:400; color:var(--faint);">2 foundation
-              + 2 differentiation</span><span class="badge">SHIP</span></div>
-          <div class="diag-cell good">The two-layer structure fixes the axis problem. <strong>Why these four:</strong>
-            two are foundations every user needs; two are the only user groups where the intent signal is strong enough
-            to justify a dedicated experience. It matches the slide 5 message. All 42 features fit.</div>
-          <div class="diag-cell">Watch out: T3 (TA) has the fewest specific features today — be ready to present it as
-            the starting point for our wider TA platform investment, not as Q3-only work.</div>
+          <div class="diag-name">Recommendation<br><span style="font-family:var(--font-mono); font-size:0.65rem; font-weight:400; color:var(--faint);">2 People + 2 Value</span><span class="badge">SHIP</span></div>
+          <div class="diag-cell good">The two-layer structure matches the two ways a company compounds. <strong>Why these four:</strong> two loops add users, where the churn drop is largest, and two loops add value per user, which lowers churn again and funds the next turn. K-factor ties all four together.</div>
+          <div class="diag-cell">Watch out: most punch-out features score zero today and are not built, so position content breadth as sequenced. Be ready to name the reinvestment step for each loop, because that is what separates this from a list of nudges.</div>
         </div>
       </div>
     </section>
@@ -1847,116 +1941,40 @@
     <!-- ============ PUSHBACK Q&A ============ -->
     <section id="pushback">
       <div class="sec-head">
-        <div class="sec-num">06 · Pre-meeting prep</div>
+        <div class="sec-num">08 · Pre-meeting prep</div>
         <h2 class="sec-title">Questions Bcom will ask. Practise the answers.</h2>
-        <p class="sec-subtitle">Each of these will be asked in some form. How confidently we answer them shows how
-          strong the framing is. Do not enter the meeting without a prepared answer to all six.</p>
+        <p class="sec-subtitle">Each of these will be asked in some form. How confidently we answer them shows how strong the framing is. Do not enter the meeting without a prepared answer to all six.</p>
       </div>
 
       <div class="qa-list">
         <div class="qa-item">
-          <div class="qa-q">Where is the self-booker theme? You are ignoring the largest user count.</div>
-          <div class="qa-a">Self-bookers are covered by the Theme 1+2 foundation — universal sign-up, universal company
-            landing. We <strong>chose not to personalise activation for them</strong> because their lifetime value does
-            not justify the cost, and there is no intent signal strong enough to use for differentiation. Instead, they
-            support Theme 3 — when solo users invite their TA, we turn our lowest-value user into our highest-value one.
-          </div>
+          <div class="qa-q">How is this different from the Activate and Company sections? Are you counting the same work twice?</div>
+          <div class="qa-a">Those sections build the mechanisms. Activate gets a user registered and into a company. Company Management adds the second user and the team structure. Growth Loops is the system that connects them so they feed each other. The same invite feature appears here as a loop step, not as new scope. <strong>We are describing how the parts compound, not adding parts.</strong></div>
         </div>
 
         <div class="qa-item">
-          <div class="qa-q">Why is "Join Existing Company" not its own theme? It is a huge investment area.</div>
-          <div class="qa-a">JEC is what makes Theme 2 <strong>work</strong>. Separating it would mix mechanism with
-            strategy — JEC is how Theme 2 happens, not a different area of focus. The engineering plan (Smart Matching,
-            AID persistence at user level, SSO v3) all fits clearly under Theme 2. Pulling JEC out would create a fifth
-            theme that looks like a feature.</div>
+          <div class="qa-q">Prove these are loops and not funnels.</div>
+          <div class="qa-a">Each loop has a named reinvestment step. A recruited arranger surfaces new travellers who can recruit again. Each member added can pull in the next. Each content type makes B4B the start point for the next trip. Each booking lowers the effort of the next and moves the company up the tiers. <strong>If the step did not return the user to the top, we would call it a funnel and drop it.</strong></div>
         </div>
 
         <div class="qa-item">
-          <div class="qa-q">You said "one flow" — so why two user-group-specific themes?</div>
-          <div class="qa-a">One flow at <strong>acquisition</strong> — that is the simplification. An adapted experience
-            at <strong>activation</strong> — that is the personalisation. The sign-up flow stays unified (less
-            complexity, faster delivery), but once a user is registered, the system uses what we already know about them
-            (channel, role, behaviour) to shape their first experience. Same system, different output.</div>
+          <div class="qa-q">What is the single metric that ties this together?</div>
+          <div class="qa-a"><strong>K-factor, the new active users generated per active user.</strong> Secondary metrics are content types booked per company and bookings per company per month. The churn numbers sit underneath. The loops work because more users and more bookings both lower churn, which keeps the loops running.</div>
         </div>
 
         <div class="qa-item">
-          <div class="qa-q">Travel Arrangers are only 15% of users — is that really enough to justify a dedicated theme?
-          </div>
-          <div class="qa-a">They drive <strong>82% of bookings</strong>. They activate at 30% vs 11% for solo-bookers —
-            the cost per activation is already lower. And one activated TA can activate an entire company. The return on
-            investment for TA activation is at least 5–10 times higher than for self-booker activation. It is the most
-            impactful personalisation focus in B4B.</div>
+          <div class="qa-q">Widening the basket sounds like upsell. Where is the loop?</div>
+          <div class="qa-a">The cross-sell is the trigger. The loop is the consolidated itinerary. Once a trip holds a hotel and a car and a flight in one place, the next trip starts in B4B because the last one is there. Then the basket widens again. <strong>Upsell happens once. This repeats.</strong></div>
         </div>
 
         <div class="qa-item">
-          <div class="qa-q">What is the single metric that ties this whole story together?</div>
-          <div class="qa-a"><strong>If we do not have one defined, this meeting is the wrong place to find out.</strong>
-            Likely candidate: "% of new accounts reaching first booking within 30 days, segmented by channel and role."
-            Decide before we walk in. Without it, the four themes look like four separate projects instead of one
-            coherent strategy.</div>
+          <div class="qa-q">Most punch-out features are unscored or not built. Is this real for Q3?</div>
+          <div class="qa-a">Flights, car, and rail are the near-term basket wideners and they have real ICE scores. Taxis, attractions, and meeting rooms are at the discovery edge and score zero today. The Q3 investment is the loop mechanic, the contextual cross-sell and the consolidated itinerary. <strong>Content breadth fills in over the following quarters.</strong></div>
         </div>
 
         <div class="qa-item">
           <div class="qa-q">How does this connect to what Bcom invests in on their side?</div>
-          <div class="qa-a">Theme 4 (Promoted) is where the partnership matters most directly — Bcom controls the
-            acquisition placement, B4B owns the activation experience. The funnel-position signal that drives our
-            personalisation comes from Bcom. Theme 1 also depends on Bcom: property links, work-email detection,
-            anonymous property previews all need Bcom-side touchpoints. <strong>We should present these as joint roadmap
-              items, not B4B requests.</strong></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ DECK NARRATIVE ============ -->
-    <section id="deck">
-      <div class="sec-head">
-        <div class="sec-num">07 · Slide flow</div>
-        <h2 class="sec-title">How this fits into the existing AMS deck</h2>
-        <p class="sec-subtitle">It maps directly onto slides 4–9 of the current Q3 deck. It replaces the current
-          "Activate Focus TBD" placeholders with a clear sequence.</p>
-      </div>
-
-      <div class="deck-flow">
-        <div class="deck-slide">
-          <span class="deck-num">04</span>
-          <span class="deck-title">Accelerating Acquisition & Activation</span>
-          <span class="deck-purpose">Section opener — unchanged.</span>
-        </div>
-        <div class="deck-slide" style="border-left: 4px solid var(--text);">
-          <span class="deck-num">04a · NEW</span>
-          <span class="deck-title">One flow. Four focus areas.</span>
-          <span class="deck-purpose">The overview slide. Sets out the main message and shows the foundation +
-            differentiation structure. Sets up everything that follows.</span>
-        </div>
-        <div class="deck-slide" style="border-left: 4px solid var(--c1);">
-          <span class="deck-num">05</span>
-          <span class="deck-title">Streamlining how we register new companies</span>
-          <span class="deck-purpose">Belongs to Theme 1. Existing slide — small reframe to lead with the "Turn intent
-            into accounts" message.</span>
-        </div>
-        <div class="deck-slide" style="border-left: 4px solid var(--c4);">
-          <span class="deck-num">06</span>
-          <span class="deck-title">Personalised Onboarding for Promoted Users</span>
-          <span class="deck-purpose">Belongs to Theme 4. Existing slide — good as it is. Add the differentiation-layer
-            tag.</span>
-        </div>
-        <div class="deck-slide" style="border-left: 4px solid var(--c2);">
-          <span class="deck-num">07</span>
-          <span class="deck-title">New members should land in a company</span>
-          <span class="deck-purpose">Belongs to Theme 2. Existing slide — strong story. Add the foundation-layer
-            tag.</span>
-        </div>
-        <div class="deck-slide" style="border-left: 4px solid var(--c3);">
-          <span class="deck-num">08</span>
-          <span class="deck-title">Activate the Travel Arranger</span>
-          <span class="deck-purpose">Belongs to Theme 3. Currently a placeholder ("Activate Focus TBD · Travel
-            Arrangers"). Build this out using the same structure as slides 6 and 7.</span>
-        </div>
-        <div class="deck-slide" style="border-left: 4px solid var(--c2); opacity: 0.6;">
-          <span class="deck-num">09</span>
-          <span class="deck-title">Joiners + Admins (currently a placeholder)</span>
-          <span class="deck-purpose">We recommend merging this into slide 7 — joiners are already the persona there. Use
-            the freed slot for the Activate metric / anchor slide.</span>
+          <div class="qa-a">Two connections. <strong>(1) Incentives:</strong> Genius tiers are the shared currency that triggers the team and frequency loops, and Bcom owns that mechanic. <strong>(2) Adjacent supply:</strong> the punch-outs ride Bcom inventory and partnerships. Both are joint roadmap items, not B4B asks.</div>
         </div>
       </div>
     </section>

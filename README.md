@@ -35,8 +35,8 @@ amsterdam/
 |---|----------------------|---------------|----------|
 | 1 | Acquisition & Activation | Slides 4–9    | ✅ Live   |
 | 2 | Company Management   | Slides 10–14  | ✅ Live   |
-| 3 | Travel Arranger      | Slides 15+    | Draft    |
-| 4 | Share Trip Options   | Slide 16      | Draft    |
+| 3 | Travel Arranger      | Slides 15+    | ✅ Live    |
+| 4 | Growth Loops   | n/a      | ✅ Live    |
 | 5 | Supply & Foundations | Slide 17      | Draft    |
 | 6 | Payment Parity       | Slide 18      | Draft    |
 | 7 | Tech Modernisation   | Slides 20–22  | Draft    |

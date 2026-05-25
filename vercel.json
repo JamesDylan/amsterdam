@@ -5,12 +5,21 @@
   "rewrites": [
     {
       "source": "/activate",
-      "destination": "/activate_themes_plan_simplified.html"
+      "destination": "/activate.html"
     },
     {
       "source": "/company",
-      "destination": "/company_themes_plan_simplified.html"
+      "destination": "/company.html"
     }
+    {
+      "source": "/arranger",
+      "destination": "/arranger.html"
+    }
+    {
+      "source": "/growth-loops",
+      "destination": "/growth-loops.html"
+    }
+
   ],
   "headers": [
     {

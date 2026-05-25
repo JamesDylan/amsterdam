@@ -10,11 +10,11 @@
     {
       "source": "/company",
       "destination": "/company.html"
-    }
+    },
     {
       "source": "/arranger",
       "destination": "/arranger.html"
-    }
+    },
     {
       "source": "/growth-loops",
       "destination": "/growth-loops.html"

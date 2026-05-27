@@ -393,6 +393,18 @@
       padding: 1.5rem 1.5rem 1.4rem;
       position: relative;
       overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s;
+    }
+
+    a.struct-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px -12px rgba(17,17,24,0.18);
+      border-color: rgba(17,17,24,0.18);
     }
 
     .struct-card::before {
@@ -1512,18 +1524,18 @@
           <span class="row-desc">More members per company. Adding members reduces churn, increases booking volume and
             creates sticky customers.</span>
         </div>
-        <div class="struct-card t1">
+        <a href="#t1" class="struct-card t1">
           <div class="struct-num">01</div>
           <div class="struct-title">Frictionless team growth</div>
           <div class="struct-desc">Make adding members the easiest thing an admin can do. Modernise the invite flow,
             capture name at invite, let Arrangers invite, share via Slack/Teams.</div>
-        </div>
-        <div class="struct-card t2">
+        </a>
+        <a href="#t2" class="struct-card t2">
           <div class="struct-num">02</div>
           <div class="struct-title">Unlock latent members</div>
           <div class="struct-desc">A huge pool of people already have a relationship with B4B but sit outside the team —
             guests at checkout, mismatched users, single-user accounts. Convert them.</div>
-        </div>
+        </a>
 
         <div class="flow-divider">
           <span class="flow-divider-text">→ once a company grows, mature how it works →</span>
@@ -1534,18 +1546,18 @@
           <span class="row-desc">Adding capabilities as companies grow. The features that let B4B serve SMBs better
             today and qualify for larger prospects tomorrow.</span>
         </div>
-        <div class="struct-card t3">
+        <a href="#t3" class="struct-card t3">
           <div class="struct-num">03</div>
           <div class="struct-title">Accelerating the 'Aha' moment</div>
           <div class="struct-desc">Replace today's disconnected settings pages with a guided setup, real team and role
             structure, and a Manage Team experience that connects management to bookings.</div>
-        </div>
-        <div class="struct-card t4">
+        </a>
+        <a href="#t4" class="struct-card t4">
           <div class="struct-num">04</div>
           <div class="struct-title">Ready for larger companies</div>
           <div class="struct-desc">Prospects with 50+ travellers tell us hierarchy, SSO, legal entities and bulk
             onboarding are barriers to joining B4B. We need to qualify for them.</div>
-        </div>
+        </a>
       </div>
     </section>
 

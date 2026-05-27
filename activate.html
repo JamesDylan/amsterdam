@@ -395,6 +395,18 @@
       padding: 1.5rem 1.5rem 1.4rem;
       position: relative;
       overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s;
+    }
+
+    a.struct-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px -12px rgba(17,17,24,0.18);
+      border-color: rgba(17,17,24,0.18);
     }
 
     .struct-card::before {
@@ -1234,7 +1246,9 @@
 
   <!-- ============ SIDEBAR ============ -->
   <aside class="sidebar">
-    <a href="index.html" style="text-decoration: none;"><div class="sidebar-eyebrow">BACK TO START</div></a>
+    <a href="index.html" style="text-decoration: none;">
+      <div class="sidebar-eyebrow">BACK TO START</div>
+    </a>
     <div class="sidebar-brand">Accelerating Acquisition & Activation</div>
     <div class="sidebar-quarter">Q3 2026 · Plan for AMS</div>
 
@@ -1303,8 +1317,10 @@
 
       <div class="thesis">
         <p class="thesis-quote">
-          Q3 goal: Every B4B user signs up through <strong>one simple flow</strong> that captures their intent and places
-          them in the right company. Then we <em>personalise the activation experience</em> for the two user groups where
+          Q3 goal: Every B4B user signs up through <strong>one simple flow</strong> that captures their intent and
+          places
+          them in the right company. Then we <em>personalise the activation experience</em> for the two user groups
+          where
           we see the most value — <strong>Travel Arrangers</strong> (15% of users, 82% of bookings) and
           <strong>Promoted Users</strong> (already showing business travel intent, but with a 44-day activation window).
         </p>
@@ -1327,18 +1343,18 @@
           <span class="row-tag">Foundation</span>
           <span class="row-desc">Applies to every user, every channel. Required for all.</span>
         </div>
-        <div class="struct-card t1">
+        <a href="#t1" class="struct-card t1">
           <div class="struct-num">01</div>
-          <div class="struct-title">Remove friction when entering B4B</div>
+          <div class="struct-title">Turn intent into accounts</div>
           <div class="struct-desc">Every sign of intent — direct traffic, property links, work emails — should become a
             registered account. We lose around 22,000 registrations per year from direct traffic alone.</div>
-        </div>
-        <div class="struct-card t2">
+        </a>
+        <a href="#t2" class="struct-card t2">
           <div class="struct-num">02</div>
           <div class="struct-title">Land in a company, not an empty account</div>
           <div class="struct-desc">Setting up company context at sign-up and first login is what makes activation work.
             Solo accounts rarely activate.</div>
-        </div>
+        </a>
 
         <div class="flow-divider">
           <span class="flow-divider-text">→ then we adapt activation based on the user's intent →</span>
@@ -1349,19 +1365,19 @@
           <span class="row-desc">Focused investments for specific user groups where personalisation creates clear
             value.</span>
         </div>
-        <div class="struct-card t3">
+        <a href="#t3" class="struct-card t3">
           <div class="struct-num">03</div>
           <div class="struct-title">Activate the Travel Arranger</div>
           <div class="struct-desc">The most valuable user type in B4B. 15% of users → 82% of bookings. Activating one TA
             can activate a whole company.</div>
-        </div>
-        <div class="struct-card t4">
+        </a>
+        <a href="#t4" class="struct-card t4">
           <div class="struct-num">04</div>
           <div class="struct-title">Activate the Promoted User on their timeline</div>
           <div class="struct-desc">These users already show business travel intent and have higher CLV — but they take
             an average of 44 days to activate, so standard onboarding doesn't work for them. We need an experience that
             adapts to where they came from in the Bcom funnel.</div>
-        </div>
+        </a>
       </div>
     </section>
 

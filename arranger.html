@@ -395,6 +395,18 @@
       padding: 1.5rem 1.5rem 1.4rem;
       position: relative;
       overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s;
+    }
+
+    a.struct-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px -12px rgba(17,17,24,0.18);
+      border-color: rgba(17,17,24,0.18);
     }
 
     .struct-card::before {
@@ -1323,16 +1335,16 @@
           <span class="row-tag">Effort</span>
           <span class="row-desc">Less work for the arranger. The booking job is too manual and too slow today.</span>
         </div>
-        <div class="struct-card t1">
+        <a href="#t1" class="struct-card t1">
           <div class="struct-num">01</div>
           <div class="struct-title">Delegate without losing control</div>
           <div class="struct-desc">Hand the booking to the traveller with a pre-approved budget and policy guardrails. The arranger keeps oversight. This also creates a second active user.</div>
-        </div>
-        <div class="struct-card t2">
+        </a>
+        <a href="#t2" class="struct-card t2">
           <div class="struct-num">02</div>
           <div class="struct-title">Run the whole trip in one place</div>
           <div class="struct-desc">Set up a trip, then manage every booking inside it. Smart search and quick rebook make each booking fast. Travellers can book within the trip the arranger set up.</div>
-        </div>
+        </a>
 
         <div class="flow-divider">
           <span class="flow-divider-text">&rarr; then give the arranger reasons to trust the result &rarr;</span>
@@ -1342,17 +1354,16 @@
           <span class="row-tag">Confidence</span>
           <span class="row-desc">Trust the outcome. The accidental arranger is not sure they are booking the right thing.</span>
         </div>
-        <div class="struct-card t3">
+        <a href="#t3" class="struct-card t3">
           <div class="struct-num">03</div>
           <div class="struct-title">Lean on the company's knowledge</div>
           <div class="struct-desc">Surface what colleagues already know. Where the team stayed, what they recommend, what the company prefers. The part-time arranger borrows the team's experience instead of guessing.</div>
-        </div>
-        <div class="struct-card t4">
+        </a>
+        <a href="#t4" class="struct-card t4">
           <div class="struct-num">04</div>
           <div class="struct-title">See the spend, get the invoice</div>
           <div class="struct-desc">Pull the invoice without chasing. See spend against budget. Know the trip stayed in policy. Invoicing is the most common reason arrangers churn.</div>
-        </div>
-      </div>
+        </a>
     </section>
 
     <!-- SLIDE MOCKUP -->

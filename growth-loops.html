@@ -393,6 +393,18 @@
       padding: 1.5rem 1.5rem 1.4rem;
       position: relative;
       overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s;
+    }
+
+    a.struct-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px -12px rgba(17,17,24,0.18);
+      border-color: rgba(17,17,24,0.18);
     }
 
     .struct-card::before {
@@ -1502,16 +1514,16 @@
           <span class="row-tag">People loops</span>
           <span class="row-desc">More users per company. Each new user becomes a way to bring in the next.</span>
         </div>
-        <div class="struct-card t1">
+        <a href="#t1" class="struct-card t1">
           <div class="struct-num">01</div>
           <div class="struct-title">Recruit the arranger</div>
           <div class="struct-desc">A solo booker invites the person who really arranges their travel. That arranger then books for them and for others, and each of those others can recruit an arranger too.</div>
-        </div>
-        <div class="struct-card t2">
+        </a>
+        <a href="#t2" class="struct-card t2">
           <div class="struct-num">02</div>
           <div class="struct-title">Grow the team around the arranger</div>
           <div class="struct-desc">The arranger adds the people they book for with a name and email. Those travellers connect their own colleagues, and the company gets larger from the inside.</div>
-        </div>
+        </a>
 
         <div class="flow-divider">
           <span class="flow-divider-text">&rarr; then each new user gives us more to work with &rarr;</span>
@@ -1521,16 +1533,16 @@
           <span class="row-tag">Value loops</span>
           <span class="row-desc">More value per user. Each booking creates a reason to come back and book again.</span>
         </div>
-        <div class="struct-card t3">
+        <a href="#t3" class="struct-card t3">
           <div class="struct-num">03</div>
           <div class="struct-title">Widen the basket</div>
           <div class="struct-desc">A user books a hotel, then adds the matching car, taxi, flight, rail, attraction, or meeting room. The trip now sits in one place, so the next trip starts in B4B.</div>
-        </div>
-        <div class="struct-card t4">
+        </a>
+        <a href="#t4" class="struct-card t4">
           <div class="struct-num">04</div>
           <div class="struct-title">Build the booking habit</div>
           <div class="struct-desc">The more a company books, the less it churns. We make the next booking easier than the last and prompt it at the right time, so B4B becomes the default.</div>
-        </div>
+        </a>
       </div>
     </section>
 
